@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  movies: MoviesModel[] = [];
+  movies: Object[] = [];
 
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
