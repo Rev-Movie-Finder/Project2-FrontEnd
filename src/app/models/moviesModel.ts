@@ -1,5 +1,10 @@
 interface MoviesModel {
-    img: string;
-    title: string;
-    year: string;
+  dates: {
+    minimum: string;
+    maximum: string;
+  };
+  page: number;
+  results: Object[];
+  total_pages: number;
+  total_results: number;
 }

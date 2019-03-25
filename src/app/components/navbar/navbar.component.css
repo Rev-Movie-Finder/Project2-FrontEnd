@@ -13,3 +13,9 @@
 .nav-link i {
   margin-right: 10px;
 }
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+  }
+}

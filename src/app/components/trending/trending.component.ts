@@ -2,24 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-trending',
+  templateUrl: './trending.component.html',
+  styleUrls: ['./trending.component.css']
 })
-export class HomeComponent implements OnInit {
+export class TrendingComponent implements OnInit {
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    this.getPopular();
+    this.getTrending();
   }
 
   movies: Object[] = [];
 
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
-  getPopular() {
-    this.movieService.getPopular()
+  getTrending() {
+    this.movieService.getTrending()
     .then((res)=>{
       const data = res;
       console.log(data.results);

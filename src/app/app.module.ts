@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UpcomingComponent } from './components/upcoming/upcoming.component';
+import { TrendingComponent } from './components/trending/trending.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    UpcomingComponent,
+    TrendingComponent,
   ],
   imports: [
     BrowserModule,

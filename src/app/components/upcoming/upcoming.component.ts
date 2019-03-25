@@ -2,24 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-upcoming',
+  templateUrl: './upcoming.component.html',
+  styleUrls: ['./upcoming.component.css']
 })
-export class HomeComponent implements OnInit {
+export class UpcomingComponent implements OnInit {
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    this.getPopular();
+    this.getUpcoming();
   }
 
-  movies: Object[] = [];
+  movies: object[] = [];
 
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
-  getPopular() {
-    this.movieService.getPopular()
+  getUpcoming() {
+    this.movieService.getUpcoming()
     .then((res)=>{
       const data = res;
       console.log(data.results);
