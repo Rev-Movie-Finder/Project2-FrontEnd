@@ -1,0 +1,16 @@
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  background-color: #212529;
+}
+
+#home_container {
+    color: white;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    width: auto;
+    height: 550px;
+}

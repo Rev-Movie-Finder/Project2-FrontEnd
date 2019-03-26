@@ -22,7 +22,6 @@ export class TrendingComponent implements OnInit {
     this.movieService.getTrending()
     .then((res)=>{
       const data = res;
-      console.log(data.results);
       this.movies = data.results;
     })
     .catch((e)=>console.log(e));

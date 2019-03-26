@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
     this.movieService.getPopular()
     .then((res)=>{
       const data = res;
-      console.log(data.results);
       this.movies = data.results;
     })
     .catch((e)=>console.log(e));

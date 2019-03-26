@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { TrendingComponent } from './components/trending/trending.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { TrendingComponent } from './components/trending/trending.component';
     NavbarComponent,
     UpcomingComponent,
     TrendingComponent,
+    MovieDetailComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
