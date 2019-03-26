@@ -12,10 +12,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getPopular();
+<<<<<<< Updated upstream
+=======
+    this.route.params.subscribe(param=>{
+      console.log();   
+    })
+>>>>>>> Stashed changes
   }
 
   movies: Object[] = [];
-
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
   getPopular() {

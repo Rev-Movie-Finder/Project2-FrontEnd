@@ -32,4 +32,8 @@ export class MovieService {
       .toPromise();
   }
 
+  getMovieSearch(url: string) : Promise<MoviesModel>{
+    console.log("searching for movie");
+    return this.http.get<MoviesModel>(url).toPromise();
+  }
 }
