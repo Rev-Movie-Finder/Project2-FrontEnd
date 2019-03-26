@@ -18,11 +18,18 @@ export class MovieDetailComponent implements OnInit {
 
   movies: MovieDetail[] = [];
 
+ 
+
   getMovieDetail() {
-    this.movieService.getMovieDetail().subscribe(allPosts => {
-      this.movies = allPosts;
-      console.log(this.movies);
-    });
+    this.movieService.getMovieDetail()
+    .then((res)=>{
+      let result = [];
+      for (var i in res)
+        result.push([i, res [i]]);
+        this.movies = result;
+    })
+    
+    .catch((e)=>console.log(e));
   }
 
 }

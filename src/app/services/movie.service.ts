@@ -32,14 +32,14 @@ export class MovieService {
       .toPromise();
   }
 
-  // getMovieDetail(): Promise<MovieDetail>{
-  //   return this.http.get<MovieDetail>(this.movieDetailUrl)
-  //     .toPromise();
-  // }
-
-  getMovieDetail(): Observable<MovieDetail[]> {
-    console.log("getting all posts")
-    return this.http.get<MovieDetail[]>(this.movieDetailUrl);
+  getMovieDetail(): Promise<MovieDetail>{
+    return this.http.get<MovieDetail>(this.movieDetailUrl)
+      .toPromise();
   }
+
+  // getMovieDetail(): Observable<MovieDetail[]> {
+  //   console.log("getting all posts")
+  //   return this.http.get<MovieDetail[]>(this.movieDetailUrl);
+  // }
 
 }
