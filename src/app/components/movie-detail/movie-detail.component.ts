@@ -29,7 +29,7 @@ export class MovieDetailComponent implements OnInit {
       .then(res => {
         this.movies = res;
         this.genres = res.genres;
-        console.log(res);
+        // console.log(res);
       })
       .catch(e => console.log(e));
   }
@@ -38,7 +38,7 @@ export class MovieDetailComponent implements OnInit {
     this.movieService
       .getCast()
       .then(res => {
-        // console.log(res.cast);
+        console.log(res.cast);
         this.casts = res.cast;
       })
       .catch(e => console.log(e));
