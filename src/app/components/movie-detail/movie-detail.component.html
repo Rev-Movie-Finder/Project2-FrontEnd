@@ -22,19 +22,27 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md"></div>
-      </div>
-    </div>
   </div>
 
   <div id="bottom_container">
-    <div id="nav_info" *ngFor="let cast of casts">
-      <div id="profile_container">
-        <img id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}" alt="" />
+    <div class="row" id="extra_details_container">
+      <div id="nav_info" *ngFor="let cast of casts">
+        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
+          <div id="profile_container">
+            <img class="center" id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}" />
+            <br /><br /><br /><br /><br /><br /><br />
+            <div id="actor_name">
+              <div>
+                Character Name: {{ cast.character }}
+              </div>
+              <div>
+                <br>
+                Cast Name: {{ cast.name }}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- {{ cast.character }} -->
     </div>
   </div>
 </div>

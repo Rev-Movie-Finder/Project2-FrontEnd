@@ -1,3 +1,7 @@
+#main_container {
+  height: 1000%;
+}
+
 #top_container {
   color: white;
   height: 880px;
@@ -48,13 +52,16 @@ h1 {
 }
 
 #bottom_container {
-  width: 100%;
- 
+  z-index: -1;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+#extra_details_container {
+  z-index: 1;
 }
 
 #nav_info {
-  padding-top: 1rem;
-  width: 100%;
   color: white;
 }
 
@@ -63,17 +70,28 @@ a:active {
   cursor: pointer;
 }
 
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 #nav_info a span {
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
-#cast_img {
+ #cast_img {
   height: 150px;
   width: 150px;
   border-radius: 50%;
 }
 
 #profile_container {
-  padding-bottom: 10rem;
+  padding-left: 50px;
+  min-width: 400px;
+  max-width: 400px;
+}
+
+#actor_name {
+  
 }
