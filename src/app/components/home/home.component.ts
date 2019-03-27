@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   }
 
   movies: Object[] = [];
-
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
   getPopular() {
