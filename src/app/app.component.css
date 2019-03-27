@@ -1,0 +1,12 @@
+.col-3 {
+  padding-right: 0px;
+  padding-left: 0px;
+  height: 100vh;
+}
+
+.col-md {
+  padding: 0px;
+}
+.container-fluid{
+ background-color: black;
+}

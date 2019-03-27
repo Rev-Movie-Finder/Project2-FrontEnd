@@ -1,0 +1,3 @@
+interface MoviesModel {
+  results: Object[];
+}
