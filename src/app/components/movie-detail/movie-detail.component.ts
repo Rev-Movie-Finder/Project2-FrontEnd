@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MovieService } from "src/app/services/movie.service";
 import { MoviesDetail, Genre } from "src/app/models/movieDetail";
-import { Cast } from 'src/app/models/castModels';
+// import { Cast } from 'src/app/models/castModels';
 
 @Component({
   selector: "app-movie-detail",
