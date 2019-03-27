@@ -23,6 +23,7 @@ export class MovieDetailComponent implements OnInit {
   casts: Object[] = [];
 
   getMovieDetail() {
+    console.log("getMovieDetail called");
     this.movieService
       .getMovieDetail()
       .then(res => {

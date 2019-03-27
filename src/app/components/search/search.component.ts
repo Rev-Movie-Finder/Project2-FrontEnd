@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TransferdataService } from 'src/app/services/transferdata.service';
 import { MovieService } from 'src/app/services/movie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -10,39 +9,22 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class SearchComponent implements OnInit {
 
-  searchInput: string;
+  searchInput: string = localStorage.getItem("searchInput");
   searchUrl: string;
   movies: Object[] = [];
 
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
-  constructor(private transferService:TransferdataService, private movieservice:MovieService,
-    private router:Router) {
+  constructor(private movieservice:MovieService, private route: Router) {
      }
 
   ngOnInit() {
-    console.log("Init called");
-    if(!localStorage.getItem("searchInput"))
-    {
-      this.searchInput = this.transferService.getData().trim();
-      localStorage.setItem("searchInput", this.searchInput);
-    }
-    else
-    {
-      if (!this.transferService.getData())
-        this.searchInput = localStorage.getItem("searchInput");
-      else
-      {
-        this.searchInput = this.transferService.getData();
-        localStorage.setItem("searchInput", this.searchInput);
-      }
-    }
     this.setUrl();
   }
 
-  getMovieSearch(url: string)
+  getMovieSearch()
   {
-    this.movieservice.getMovieSearch(url)
+    this.movieservice.getMovieSearch()
     .then((res)=>{
       const data = res;
       console.log(data.results);
@@ -53,12 +35,14 @@ export class SearchComponent implements OnInit {
 
   setUrl()
   {
-    if(this.searchInput)
-    {
-      console.log("Search recieved the data from transfer service");
-      this.searchUrl = this.movieservice.getBaseUrl() + "search/movie?" + this.movieservice.getApiKey() + "&language=en-US&query=" + this.searchInput;
-      console.log("The url is: " + this.searchUrl);
-      this.getMovieSearch(this.searchUrl);
-    }
+      this.searchUrl = this.movieservice.getBaseUrl() + "search/movie?" + this.movieservice.getApiKey() + "&language=en-US&query=" + localStorage.getItem("searchInput");
+      localStorage.setItem("searchUrl", this.searchUrl);
+      this.getMovieSearch();
+  }
+
+  redirectUrl(id: string)
+  {
+      localStorage.setItem("movieId", id);
+      this.route.navigateByUrl("movies/movie-detail");
   }
 }

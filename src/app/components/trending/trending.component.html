@@ -4,7 +4,9 @@
     <div class="row">
       <div id="nowPlayingContainer" *ngFor="let movie of movies">
         <div id="addPadding" class="col-lg3-col-sm-4 my-5">
-          <img src="{{ imgUrl }}{{ movie.poster_path }}" alt="" />
+          <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
+            <img src="{{ imgUrl }}{{ movie.poster_path }}" alt="" />
+          </a>
           <p class="text-muted text-center mb-3" id="mTitle">{{ movie.title }}</p>
         </div>
       </div>

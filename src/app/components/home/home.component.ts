@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService, private route: Router) { }
 
   ngOnInit() {
     this.getPopular();
@@ -26,4 +28,9 @@ export class HomeComponent implements OnInit {
     .catch((e)=>console.log(e));
   }
 
+  redirectUrl(id: string)
+  {
+      localStorage.setItem("movieId", id);
+      this.route.navigateByUrl("movies/movie-detail");
+  }
 }

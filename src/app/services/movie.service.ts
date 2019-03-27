@@ -42,7 +42,7 @@ export class MovieService {
 
   getMovieSearch(url: string): Promise<MoviesModel> {
     console.log("searching for movie");
-    return this.http.get<MoviesModel>(url).toPromise();
+    return this.http.get<MoviesModel>(localStorage.getItem("searchUrl")).toPromise();
   }
 
   getMovieDetail(): Promise<MoviesDetail> {
