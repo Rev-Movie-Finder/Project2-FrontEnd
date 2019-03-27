@@ -6,34 +6,54 @@ import { MoviesDetail } from "../models/movieDetail";
   providedIn: "root"
 })
 export class MovieService {
-  baseUrl: string = `https://api.themoviedb.org/3/movie/`;
-  apiKey: string = `?api_key=5d0c0be0b57a0b544ed4f305ebcdfee8`;
-
-  nowPlayingUrl: string = `${this.baseUrl}now_playing${this.apiKey}`;
-  upcomingUrl: string = `${this.baseUrl}upcoming${this.apiKey}`;
-  trendingUrl: string = `${this.baseUrl}popular${this.apiKey}`;
-  movieDetailUrl: string = `${this.baseUrl}299537${this.apiKey}`;
-  castUrl: string = `https://api.themoviedb.org/3/movie/299537/credits?api_key=5d0c0be0b57a0b544ed4f305ebcdfee8`;
+  private baseUrl: string = "https://api.themoviedb.org/3/";
+  private apiKey: string = "api_key=5d0c0be0b57a0b544ed4f305ebcdfee8";
 
   constructor(private http: HttpClient) {}
 
+  getBaseUrl() {
+    return this.baseUrl;
+  }
+
+  getApiKey() {
+    return this.apiKey;
+  }
+
   getPopular(): Promise<MoviesModel> {
-    return this.http.get<MoviesModel>(this.nowPlayingUrl).toPromise();
+    console.log("getting all current popular movie");
+    return this.http
+      .get<MoviesModel>(this.baseUrl + "movie/now_playing?" + this.apiKey)
+      .toPromise();
   }
 
   getUpcoming(): Promise<MoviesModel> {
-    return this.http.get<MoviesModel>(this.upcomingUrl).toPromise();
+    console.log("getting all current popular movie");
+    return this.http
+      .get<MoviesModel>(this.baseUrl + "movie/upcoming?" + this.apiKey)
+      .toPromise();
   }
 
   getTrending(): Promise<MoviesModel> {
-    return this.http.get<MoviesModel>(this.trendingUrl).toPromise();
+    console.log("getting all current popular movie");
+    return this.http
+      .get<MoviesModel>(this.baseUrl + "movie/popular?" + this.apiKey)
+      .toPromise();
+  }
+
+  getMovieSearch(): Promise<MoviesModel> {
+    console.log("searching for movie");
+    return this.http.get<MoviesModel>(localStorage.getItem("searchUrl")).toPromise();
   }
 
   getMovieDetail(): Promise<MoviesDetail> {
-    return this.http.get<MoviesDetail>(this.movieDetailUrl).toPromise();
+    return this.http
+      .get<MoviesDetail>(this.baseUrl + "movie/299537?" + this.apiKey)
+      .toPromise();
   }
 
   getCast(): Promise<CastModel> {
-    return this.http.get<CastModel>(this.castUrl).toPromise();
+    return this.http
+      .get<CastModel>(this.baseUrl + "movie/299537/credits?" + this.apiKey)
+      .toPromise();
   }
 }
