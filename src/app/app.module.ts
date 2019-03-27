@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { TrendingComponent } from './components/trending/trending.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { TrendingComponent } from './components/trending/trending.component';
     NavbarComponent,
     UpcomingComponent,
     TrendingComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,12 +12,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getPopular();
-<<<<<<< Updated upstream
-=======
-    this.route.params.subscribe(param=>{
-      console.log();   
-    })
->>>>>>> Stashed changes
   }
 
   movies: Object[] = [];

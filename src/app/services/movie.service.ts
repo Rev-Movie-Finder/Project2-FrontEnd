@@ -5,30 +5,36 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MovieService {
-
-  nowPlayingUrl: string = `https://api.themoviedb.org/3/movie/now_playing?api_key=5d0c0be0b57a0b544ed4f305ebcdfee8&language=en-US`;
-
-  upcomingUrl: string = `https://api.themoviedb.org/3/movie/upcoming?api_key=5d0c0be0b57a0b544ed4f305ebcdfee8&language=en-US&region=US`
-
-  trendingUrl: string = `https://api.themoviedb.org/3/movie/popular?api_key=5d0c0be0b57a0b544ed4f305ebcdfee8&language=en-US`
+  private baseUrl: string = "https://api.themoviedb.org/3/";
+  private apiKey: string = "api_key=5d0c0be0b57a0b544ed4f305ebcdfee8";
 
   constructor(private http: HttpClient) { }
 
+  getBaseUrl()
+  {
+    return this.baseUrl;
+  }
+
+  getApiKey()
+  {
+    return this.apiKey;
+  }
+
   getPopular(): Promise<MoviesModel>{
     console.log("getting all current popular movie");
-    return this.http.get<MoviesModel>(this.nowPlayingUrl)
+    return this.http.get<MoviesModel>(this.baseUrl + "movie/now_playing?" + this.apiKey)
       .toPromise();
   }
 
   getUpcoming(): Promise<MoviesModel>{
     console.log("getting all current popular movie");
-    return this.http.get<MoviesModel>(this.upcomingUrl)
+    return this.http.get<MoviesModel>(this.baseUrl + "movie/upcoming?" + this.apiKey)
       .toPromise();
   }
   
   getTrending(): Promise<MoviesModel>{
     console.log("getting all current popular movie");
-    return this.http.get<MoviesModel>(this.trendingUrl)
+    return this.http.get<MoviesModel>(this.baseUrl + "movie/popular?" + this.apiKey)
       .toPromise();
   }
 
