@@ -1,5 +1,5 @@
 #searchbox {
-  padding: 1rem;
+  padding: 1.3rem;
   background: #ff424f;
 }
 
@@ -18,4 +18,14 @@
   .sidebar {
     width: 100% !important;
   }
+}
+
+@media (min-width: 768px) {
+  .sidebar .nav-item {
+    padding: 0rem !important ;
+  }
+}
+
+i {
+  padding-left: 1.2rem;
 }
