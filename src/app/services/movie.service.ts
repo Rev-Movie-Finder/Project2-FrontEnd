@@ -39,16 +39,16 @@ export class MovieService {
       .toPromise();
   }
 
-  getMovieSearch(url: string) : Promise<MoviesModel>{
+  getMovieSearch() : Promise<MoviesModel>{
     console.log("searching for movie");
-    return this.http.get<MoviesModel>(url).toPromise();
+    return this.http.get<MoviesModel>(localStorage.getItem("searchUrl")).toPromise();
   }
 
   getMovieDetail(): Promise<MoviesDetail> {
-    return this.http.get<MoviesDetail>(this.baseUrl + "movie/299537?" + this.apiKey).toPromise();
+    return this.http.get<MoviesDetail>(this.baseUrl + "movie/" + localStorage.getItem("movieId") + "?" + this.apiKey).toPromise();
   }
 
   getCast(): Promise<CastModel> {
-    return this.http.get<CastModel>(this.baseUrl + "movie/299537/credits?" + this.apiKey).toPromise();
+    return this.http.get<CastModel>(this.baseUrl + "movie/" + localStorage.getItem("movieId") + "/credits?" + this.apiKey).toPromise();
   }
 }
