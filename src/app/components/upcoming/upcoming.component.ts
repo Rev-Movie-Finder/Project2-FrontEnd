@@ -22,7 +22,6 @@ export class UpcomingComponent implements OnInit {
     this.movieService.getUpcoming()
     .then((res)=>{
       const data = res;
-      console.log(data.results);
       this.movies = data.results;
     })
     .catch((e)=>console.log(e));

@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { SearchComponent } from './components/search/search.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { SearchComponent } from './components/search/search.component';
     UpcomingComponent,
     TrendingComponent,
     SearchComponent,
+    MovieDetailComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

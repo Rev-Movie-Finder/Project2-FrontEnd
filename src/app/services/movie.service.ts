@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { MoviesDetail } from "../models/movieDetail";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class MovieService {
   private baseUrl: string = "https://api.themoviedb.org/3/";
@@ -41,5 +42,13 @@ export class MovieService {
   getMovieSearch(url: string) : Promise<MoviesModel>{
     console.log("searching for movie");
     return this.http.get<MoviesModel>(url).toPromise();
+  }
+
+  getMovieDetail(): Promise<MoviesDetail> {
+    return this.http.get<MoviesDetail>(this.baseUrl + "movie/299537?" + this.apiKey).toPromise();
+  }
+
+  getCast(): Promise<CastModel> {
+    return this.http.get<CastModel>(this.baseUrl + "movie/299537/credits?" + this.apiKey).toPromise();
   }
 }
