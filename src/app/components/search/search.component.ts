@@ -20,30 +20,27 @@ export class SearchComponent implements OnInit {
     this.setUrl();
   }
 
-  getMovieSearch() {
-    this.movieservice
-      .getMovieSearch()
-      .then(res => {
-        const data = res;
-        console.log(data.results);
-        this.movies = data.results;
-      })
-      .catch(e => console.log(e));
+  getMovieSearch()
+  {
+    this.movieservice.getMovieSearch()
+    .then((res)=>{
+      const data = res;
+      console.log(data.results);
+      this.movies = data.results;
+    })
+    .catch((e)=>console.log(e));
   }
 
-  setUrl() {
-    this.searchUrl =
-      this.movieservice.getBaseUrl() +
-      "search/movie?" +
-      this.movieservice.getApiKey() +
-      "&language=en-US&query=" +
-      localStorage.getItem("searchInput");
-    localStorage.setItem("searchUrl", this.searchUrl);
-    this.getMovieSearch();
+  setUrl()
+  {
+      this.searchUrl = this.movieservice.getBaseUrl() + "search/movie?" + this.movieservice.getApiKey() + "&language=en-US&query=" + localStorage.getItem("searchInput");
+      localStorage.setItem("searchUrl", this.searchUrl);
+      this.getMovieSearch();
   }
 
-  redirectUrl(id: string) {
-    localStorage.setItem("movieId", id);
-    this.route.navigateByUrl("movies/movie-detail");
+  redirectUrl(id: string)
+  {
+      localStorage.setItem("movieId", id);
+      this.route.navigateByUrl("movies/movie-detail");
   }
 }
