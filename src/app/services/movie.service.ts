@@ -23,25 +23,25 @@ export class MovieService {
 
   getPopular(): Promise<MoviesModel>{
     console.log("getting all current popular movie");
-    return this.http.get<MoviesModel>(this.baseUrl + "movie/now_playing?" + this.apiKey)
+    return this.http.get<MoviesModel>(`${this.baseUrl}movie/now_playing?${this.apiKey}&page=${localStorage.getItem("pageIndex")}`)
       .toPromise();
   }
 
   getUpcoming(): Promise<MoviesModel>{
     console.log("getting all current popular movie");
-    return this.http.get<MoviesModel>(this.baseUrl + "movie/upcoming?" + this.apiKey)
+    return this.http.get<MoviesModel>(`${this.baseUrl}movie/upcoming?${this.apiKey}&page=${localStorage.getItem("pageIndex")}`)
       .toPromise();
   }
   
   getTrending(): Promise<MoviesModel>{
     console.log("getting all current popular movie");
-    return this.http.get<MoviesModel>(this.baseUrl + "movie/popular?" + this.apiKey)
+    return this.http.get<MoviesModel>(`${this.baseUrl}movie/popular?${this.apiKey}&page=${localStorage.getItem("pageIndex")}`)
       .toPromise();
   }
 
   getMovieSearch() : Promise<MoviesModel>{
     console.log("searching for movie");
-    return this.http.get<MoviesModel>(localStorage.getItem("searchUrl")).toPromise();
+    return this.http.get<MoviesModel>(`${localStorage.getItem("searchUrl")}&page=${localStorage.getItem("pageIndex")}`).toPromise();
   }
 
   getMovieDetail(): Promise<MoviesDetail> {
