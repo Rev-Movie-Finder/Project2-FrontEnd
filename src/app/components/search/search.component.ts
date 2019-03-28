@@ -21,6 +21,7 @@ export class SearchComponent implements OnInit {
   constructor(private movieservice: MovieService, private route: Router) {}
 
   ngOnInit() {
+    localStorage.setItem("pageIndex", "1");
     this.setUrl();
   }
 
