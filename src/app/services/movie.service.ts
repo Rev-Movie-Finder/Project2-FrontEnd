@@ -26,26 +26,27 @@ export class MovieService {
     return this.apiKey;
   }
 
-  getPopular(): Promise<MoviesModel> {
-    return this.http
-      .get<MoviesModel>(this.baseUrl + "movie/now_playing?" + this.apiKey)
+  getPopular(): Promise<MoviesModel>{
+    console.log("getting all current popular movie");
+    return this.http.get<MoviesModel>(`${this.baseUrl}movie/now_playing?${this.apiKey}&page=${localStorage.getItem("pageIndex")}`)
       .toPromise();
   }
 
-  getUpcoming(): Promise<MoviesModel> {
-    return this.http
-      .get<MoviesModel>(this.baseUrl + "movie/upcoming?" + this.apiKey)
+  getUpcoming(): Promise<MoviesModel>{
+    console.log("getting all current popular movie");
+    return this.http.get<MoviesModel>(`${this.baseUrl}movie/upcoming?${this.apiKey}&page=${localStorage.getItem("pageIndex")}`)
+      .toPromise();
+  }
+  
+  getTrending(): Promise<MoviesModel>{
+    console.log("getting all current popular movie");
+    return this.http.get<MoviesModel>(`${this.baseUrl}movie/popular?${this.apiKey}&page=${localStorage.getItem("pageIndex")}`)
       .toPromise();
   }
 
-  getTrending(): Promise<MoviesModel> {
-    return this.http
-      .get<MoviesModel>(this.baseUrl + "movie/popular?" + this.apiKey)
-      .toPromise();
-  }
-
-  getMovieSearch(): Promise<MoviesModel> {
-    return this.http.get<MoviesModel>(localStorage.getItem("searchUrl")).toPromise();
+  getMovieSearch() : Promise<MoviesModel>{
+    console.log("searching for movie");
+    return this.http.get<MoviesModel>(`${localStorage.getItem("searchUrl")}&page=${localStorage.getItem("pageIndex")}`).toPromise();
   }
 
   getMovieDetail(): Promise<MoviesDetail> {
