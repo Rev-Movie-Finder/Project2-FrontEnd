@@ -1,3 +1,7 @@
+#main_container {
+  color: white;
+}
+
 #top_container {
   color: white;
   height: 880px;
@@ -75,6 +79,13 @@ a:active {
   padding-right: 3rem;
 }
 
+#more_info {
+  padding-top: 2rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
 #cast_img {
   z-index: 1;
 
@@ -88,3 +99,20 @@ a:active {
   min-width: 400px;
   max-width: 400px;
 }
+
+#trailer_container {
+  width: 100%;
+  text-align: center;
+}
+
+#more_info {
+  background-color: rgba(0, 0, 0, 0.87);
+  padding-bottom: 1rem;
+}
+
+#more_info div {
+  font-size: 18px;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+

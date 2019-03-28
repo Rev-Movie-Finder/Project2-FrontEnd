@@ -5,6 +5,7 @@ import { StarModel } from '../models/starModel';
 import { StarMovieModel } from '../models/starMovieModel';
 import { StarShowModel } from '../models/starShowModel';
 import { TrailerModel } from '../models/TrailerModel';
+import { SimilarMovies } from '../models/similarMovieModel';
 
 @Injectable({
   providedIn: "root"
@@ -65,6 +66,12 @@ export class MovieService {
       .toPromise();
   }
 
+  getSimilarMovies(): Promise<SimilarMovies> {
+    return this.http
+      .get<SimilarMovies>(this.movieUrl + "299537/similar?" + this.apiKey)
+      .toPromise();
+  }
+
   getStar(): Promise<StarModel> {
     return this.http
       .get<StarModel>(this.starUrl + "60073?" + this.apiKey)
@@ -82,5 +89,6 @@ export class MovieService {
       .get<StarShowModel>(this.starUrl + "60073/tv_credits?" + this.apiKey)
       .toPromise();
   }
+
 
 }

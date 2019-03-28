@@ -23,16 +23,27 @@
       </div>
     </div>
   </div>
+  
+  <div id="more_info">
+    <div (click)="getCast()">CAST</div>
+    <div (click)="getTrailer()">TRAILER</div>
+    <div >SIMILAR MOVIES</div>
+  </div>
+
+    <!-- (click)="getTrailer()" -->
 
   <div id="bottom_container">
     <div class="row" id="extra_details_container">
       <div id="nav_info" *ngFor="let cast of casts">
+
         <div id="addPadding" class="col-lg3-col-sm-4 my-5">
           <div id="profile_container">
             <div *ngIf="!cast.profile_path; else with_img">
               <img class="center" id="cast_img" src="https://alencarfamilydentistry.com/wp-content/uploads/2017/08/Dummy-Profile.png"/>
             </div>
-              <img class="center" id="cast_img" src="{{imgUrl}}{{cast.profile_path}}"/>
+              <a (click)="redirectUrl(cast.id)" style="cursor: pointer">
+                <img class="center" id="cast_img" src="{{imgUrl}}{{cast.profile_path}}"/>
+              </a>
             <br /><br /><br /><br /><br /><br /><br />
             <br />
             <br />
@@ -47,12 +58,14 @@
           </div>
         </div>
       </div>
+      <!-- <div id="trailer_container">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/Y_JGZTlUbZg"></iframe>
+      </div> -->
 
-      <div id="nav_info">
-        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
-            <!-- <iframe width="560" height="315" [src]="https://img.youtube.com/vi/{{ videoUrl }}{{ trailer.results.key }}" frameborder="0" allowfullscreen></iframe> -->
-        </div>
+      <div id="similar_movie_container">
+
       </div>
+      
     </div>
   </div>
 </div>

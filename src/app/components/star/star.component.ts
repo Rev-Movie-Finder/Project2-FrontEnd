@@ -14,7 +14,7 @@ export class StarComponent implements OnInit {
 
   ngOnInit() {
     this.getStar();
-    // this.getStarMovie();
+    this.getStarMovie();
     // this.getStarShow();
   }
 
