@@ -12,6 +12,10 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { SearchComponent } from './components/search/search.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { AboutComponent } from './components/about/about.component';
+import { LoginComponentComponent } from './components/login-component/login-component.component';
+import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyMaterialModule } from './material.module';
 
 
 @NgModule({
@@ -24,12 +28,16 @@ import { AboutComponent } from './components/about/about.component';
     SearchComponent,
     MovieDetailComponent,
     AboutComponent,
+    LoginComponentComponent,
+    RegistrationComponentComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
