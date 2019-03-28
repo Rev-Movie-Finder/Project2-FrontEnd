@@ -29,11 +29,10 @@
       <div id="nav_info" *ngFor="let cast of casts">
         <div id="addPadding" class="col-lg3-col-sm-4 my-5">
           <div id="profile_container">
-            <img
-              class="center"
-              id="cast_img"
-              src="{{ imgUrl }}{{ cast.profile_path }}"
-            />
+            <div *ngIf="!cast.profile_path; else with_img">
+              <img class="center" id="cast_img" src="https://alencarfamilydentistry.com/wp-content/uploads/2017/08/Dummy-Profile.png"/>
+            </div>
+              <img class="center" id="cast_img" src="{{imgUrl}}{{cast.profile_path}}"/>
             <br /><br /><br /><br /><br /><br /><br />
             <br />
             <br />

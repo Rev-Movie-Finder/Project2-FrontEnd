@@ -13,6 +13,10 @@ import { SearchComponent } from './components/search/search.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { AboutComponent } from './components/about/about.component';
 import { StarComponent } from './components/star/star.component';
+import { LoginComponentComponent } from './components/login-component/login-component.component';
+import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyMaterialModule } from './material.module';
 
 
 @NgModule({
@@ -26,12 +30,16 @@ import { StarComponent } from './components/star/star.component';
     MovieDetailComponent,
     AboutComponent,
     StarComponent,
+    LoginComponentComponent,
+    RegistrationComponentComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
