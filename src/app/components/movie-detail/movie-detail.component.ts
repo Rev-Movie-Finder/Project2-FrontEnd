@@ -13,8 +13,8 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovieDetail();
-    // this.getCast();
-    this.getTrailer();
+    this.getCast();
+    // this.getTrailer();
   }
 
   imgUrl: string = "https://image.tmdb.org/t/p/original";
