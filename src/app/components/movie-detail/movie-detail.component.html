@@ -29,18 +29,29 @@
       <div id="nav_info" *ngFor="let cast of casts">
         <div id="addPadding" class="col-lg3-col-sm-4 my-5">
           <div id="profile_container">
-            <img class="center" id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}" />
-            <br /><br /><br /><br /><br /><br /><br /> <br> <br>
+            <img
+              class="center"
+              id="cast_img"
+              src="{{ imgUrl }}{{ cast.profile_path }}"
+            />
+            <br /><br /><br /><br /><br /><br /><br />
+            <br />
+            <br />
             <div id="actor_name">
               <div>
-                Character Name: {{ cast.character }}
+                {{ cast.character }}
               </div>
-              <div>
-                <br>
-                Cast Name: {{ cast.name }}
+              <div id="cast_name">
+                {{ cast.name }}
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div id="nav_info">
+        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
+            <!-- <iframe width="560" height="315" [src]="https://img.youtube.com/vi/{{ videoUrl }}{{ trailer.results.key }}" frameborder="0" allowfullscreen></iframe> -->
         </div>
       </div>
     </div>

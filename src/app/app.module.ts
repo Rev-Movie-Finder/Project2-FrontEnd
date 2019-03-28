@@ -12,6 +12,7 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { SearchComponent } from './components/search/search.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { AboutComponent } from './components/about/about.component';
+import { StarComponent } from './components/star/star.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AboutComponent } from './components/about/about.component';
     SearchComponent,
     MovieDetailComponent,
     AboutComponent,
+    StarComponent,
   ],
   imports: [
     BrowserModule,

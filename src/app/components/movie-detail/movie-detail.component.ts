@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MovieService } from "src/app/services/movie.service";
 import { MoviesDetail, Genre } from "src/app/models/movieDetail";
-// import { Cast } from 'src/app/models/castModels';
+import { TrailerModel } from 'src/app/models/TrailerModel';
 
 @Component({
   selector: "app-movie-detail",
@@ -13,14 +13,17 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovieDetail();
-    this.getCast();
+    // this.getCast();
+    this.getTrailer();
   }
 
   imgUrl: string = "https://image.tmdb.org/t/p/original";
+  videoUrl: string = "https://www.youtube.com/watch?v=";
 
   movies: MoviesDetail;
   genres: Genre[];
   casts: Object[] = [];
+  trailers: Object[] = [];
 
   getMovieDetail() {
     console.log("getMovieDetail called");
@@ -29,7 +32,6 @@ export class MovieDetailComponent implements OnInit {
       .then(res => {
         this.movies = res;
         this.genres = res.genres;
-        // console.log(res);
       })
       .catch(e => console.log(e));
   }
@@ -38,10 +40,20 @@ export class MovieDetailComponent implements OnInit {
     this.movieService
       .getCast()
       .then(res => {
-        console.log(res.cast);
         this.casts = res.cast;
       })
       .catch(e => console.log(e));
   }
+
+  getTrailer() {
+    this.movieService
+      .getTrailer()
+      .then(res => {
+        console.log(res.results);
+        this.trailers = res.results;
+      })
+      .catch(e => console.log(e));
+  }
+
   
 }

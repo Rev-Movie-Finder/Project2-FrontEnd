@@ -1,0 +1,65 @@
+<div class="container-fluid" id="main_container">
+  <img src="{{ imgUrl }}{{ stars.profile_path }}" />
+  <br />
+  <br />
+  <div id="star_name">
+    {{ stars.name }}
+  </div>
+  <div id="star_bday">
+    {{ stars.birthday }}
+  </div>
+  <br />
+  <div id="star_bio">
+    {{ stars.biography }}
+  </div>
+  <div id="more_info">
+    <div (click)="getStarMovie()">KNOWN IN MOVIES FOR</div>
+    <div (click)="getStarShow()">KNOWN IN TV FOR</div>
+  </div>
+
+  <div id="bottom_container">
+    <div class="row" id="extra_details_container">
+      <div id="nav_info" *ngFor="let movie of starMovies">
+        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
+          <div id="profile_container">
+            <img
+              class="center"
+              id="cast_img"
+              src="{{ imgUrl }}{{ movie.poster_path }}"
+            />
+            <br /><br />
+            <div id="movie_title">
+              <div>
+                {{ movie.title }}
+              </div>
+              <div id="movie_character">
+                {{ movie.character }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="nav_info" *ngFor="let show of starShows">
+        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
+          <div id="profile_container">
+            <img
+              class="center"
+              id="cast_img"
+              src="{{ imgUrl }}{{ show.poster_path }}"
+            />
+            <br /><br />
+            <div id="movie_title">
+              <div>
+                {{ show.name }}
+              </div>
+              <div id="movie_character">
+                {{ show.character }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
