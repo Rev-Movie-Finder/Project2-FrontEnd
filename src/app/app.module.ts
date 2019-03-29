@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -39,7 +39,7 @@ import { MyMaterialModule } from './material.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MyMaterialModule
+    MyMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

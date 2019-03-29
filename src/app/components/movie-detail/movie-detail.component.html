@@ -36,7 +36,7 @@
           <div id="profile_container">
             <a (click)="redirectUrl(cast.id)" style="cursor: pointer">
               <img *ngIf="!cast.profile_path" class="center" id="cast_img" src="https://s3.amazonaws.com/project2-dt/profile-jedi.png"/>
-              <img *ngIf="cast.profile_path" class="center" id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}"/>
+              <img class="center" id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}"/>
             </a>
             <br /><br /><br /><br /><br /><br /><br />
             <br />
@@ -54,9 +54,9 @@
         </div>
       </div>
 
-      <!-- <div id="trailer_container">
-        <iframe width="760" height="515" src="https://www.youtube.com/embed/Y_JGZTlUbZg"></iframe>
-      </div> -->
+      <div id="trailer_container">
+        <iframe width="760" height="515" [src]="getVideoUrl()" allowfullscreen></iframe>
+      </div>
 
       <div id="nav_info" *ngFor="let simMovie of similarMovies">
           <div id="addPadding" class="col-lg3-col-sm-4 my-5">
