@@ -52,40 +52,40 @@ export class MovieService {
   }
 
   getMovieDetail(): Promise<MoviesDetail> {
-    return this.http.get<MoviesDetail>(`${this.baseUrl}movie/${localStorage.getItem("movieId")}?${this.apiKey}`).toPromise();
+    return this.http.get<MoviesDetail>(this.baseUrl + "movie/" + localStorage.getItem("movieId") + "?" + this.apiKey).toPromise();
   }
 
   getCast(): Promise<CastModel> {
-    return this.http.get<CastModel>(`${this.baseUrl}movie/${localStorage.getItem("movieId")}/credits?${this.apiKey}`).toPromise();
+    return this.http.get<CastModel>(this.baseUrl + "movie/" + localStorage.getItem("movieId") + "/credits?" + this.apiKey).toPromise();
   }
 
   getTrailer(): Promise<TrailerModel> {
     return this.http
-      .get<TrailerModel>(`${this.baseUrl}movie/${localStorage.getItem("movieId")}/videos?${this.apiKey}`)
+      .get<TrailerModel>(this.movieUrl + "299537/videos?" + this.apiKey)
       .toPromise();
   }
 
   getSimilarMovies(): Promise<SimilarMovies> {
     return this.http
-      .get<SimilarMovies>(`${this.baseUrl}movie/${localStorage.getItem("movieId")}/similar?${this.apiKey}`)
+      .get<SimilarMovies>(this.movieUrl + "299537/similar?" + this.apiKey)
       .toPromise();
   }
 
   getStar(): Promise<StarModel> {
     return this.http
-      .get<StarModel>(`${this.baseUrl}person/${localStorage.getItem("castId")}?${this.apiKey}`)
+      .get<StarModel>(this.starUrl + "60073?" + this.apiKey)
       .toPromise();
   }
 
   getStarMovie(): Promise<StarMovieModel> {
     return this.http
-      .get<StarMovieModel>(`${this.baseUrl}person/${localStorage.getItem("castId")}/movie_credits?${this.apiKey}`)
+      .get<StarMovieModel>(this.starUrl + "60073/movie_credits?" + this.apiKey)
       .toPromise();
   }
 
   getStarShow(): Promise<StarShowModel> {
     return this.http
-      .get<StarShowModel>(`${this.baseUrl}person/${localStorage.getItem("castId")}/tv_credits?${this.apiKey}`)
+      .get<StarShowModel>(this.starUrl + "60073/tv_credits?" + this.apiKey)
       .toPromise();
   }
 }
