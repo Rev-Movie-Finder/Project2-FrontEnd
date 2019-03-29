@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 import { MovieService } from "src/app/services/movie.service";
 import { MoviesDetail, Genre } from "src/app/models/movieDetail";
-import { TrailerModel } from 'src/app/models/TrailerModel';
+// import { Cast } from 'src/app/models/castModels';
 
 @Component({
   selector: "app-movie-detail",
@@ -10,30 +9,27 @@ import { TrailerModel } from 'src/app/models/TrailerModel';
   styleUrls: ["./movie-detail.component.css"]
 })
 export class MovieDetailComponent implements OnInit {
-  constructor(private movieService: MovieService, private route: Router) {}
+  constructor(private movieService: MovieService) {}
 
   ngOnInit() {
     this.getMovieDetail();
     this.getCast();
-    // this.getTrailer();
-    // this.getSimilarMovies();
   }
 
   imgUrl: string = "https://image.tmdb.org/t/p/original";
-  videoUrl: string = "https://www.youtube.com/watch?v=";
 
   movies: MoviesDetail;
   genres: Genre[];
   casts: Object[] = [];
-  trailers: Object[] = [];
-  similarMovies: Object[] = [];
 
   getMovieDetail() {
+    console.log("getMovieDetail called");
     this.movieService
       .getMovieDetail()
       .then(res => {
         this.movies = res;
         this.genres = res.genres;
+        // console.log(res);
       })
       .catch(e => console.log(e));
   }
@@ -42,38 +38,10 @@ export class MovieDetailComponent implements OnInit {
     this.movieService
       .getCast()
       .then(res => {
+        console.log(res.cast);
         this.casts = res.cast;
       })
       .catch(e => console.log(e));
   }
-
-  redirectUrl(id: string) {
-    localStorage.setItem("castId", id);
-    this.route.navigateByUrl("star");
-  }
-
-  getTrailer() {
-    this.movieService
-      .getTrailer()
-      .then(res => {
-        console.log(res.results);
-        this.trailers = res.results;
-      })
-      .catch(e => console.log(e));
-  }
-
-  getSimilarMovies() {
-    this.movieService
-      .getSimilarMovies()
-      .then(res => {
-        this.similarMovies = res.results;
-      })
-      .catch(e => console.log(e));
-  }
-
-  redirectUrl2(id: string) {
-    localStorage.setItem("movieId", id);
-    this.route.navigateByUrl("movies/movie-detail");
-  }
-
+  
 }

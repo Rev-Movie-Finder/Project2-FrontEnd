@@ -3,12 +3,13 @@ import { MovieService } from 'src/app/services/movie.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private movieService: MovieService, private route: Router) {}
+
+  constructor(private movieService: MovieService, private route: Router) { }
 
   ngOnInit() {
     localStorage.setItem("pageIndex", "1");
@@ -32,9 +33,10 @@ export class HomeComponent implements OnInit {
     .catch((e)=>console.log(e));
   }
 
-  redirectUrl(id: string) {
-    localStorage.setItem("movieId", id);
-    this.route.navigateByUrl("movies/movie-detail");
+  redirectUrl(id: string)
+  {
+      localStorage.setItem("movieId", id);
+      this.route.navigateByUrl("movies/movie-detail");
   }
 
   createButtons()
