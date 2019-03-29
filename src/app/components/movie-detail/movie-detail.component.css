@@ -1,15 +1,11 @@
-#main_container {
-  color: white;
-}
-
 #top_container {
   color: white;
-  height: 980px;
+  height: 880px;
 }
 
 img {
-  height: 980px;
   width: 100%;
+  height: 880px;
   z-index: -1;
   opacity: 0.95;
   position: absolute;
@@ -52,8 +48,9 @@ h1 {
 }
 
 #bottom_container {
-  background-color: rgba(0, 0, 0, 0.87);
   z-index: -1;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.87);
 }
 
 #extra_details_container {
@@ -79,25 +76,9 @@ a:active {
   padding-right: 3rem;
 }
 
-#more_info {
-  padding-top: 2rem;
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-#actor_name {
-  font-size: 20px;
-}
-
-#cast_name {
-  color: #9e9e9e;
-}
-
-#cast_img {
-  z-index: 1;
-  height: 200px;
-  width: 200px;
+ #cast_img {
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
 }
 
@@ -107,32 +88,6 @@ a:active {
   max-width: 400px;
 }
 
-#trailer_container {
-  width: 100%;
-  text-align: center;
-}
-
-#more_info {
-  background-color: rgba(0, 0, 0, 0.87);
-  padding-bottom: 1rem;
-}
-
-#more_info div {
-  font-size: 18px;
-  padding-left: 2rem;
-  cursor: pointer;
-}
-
-#mTitle {
-  font-size: 22px;
-  max-width: 300px;
-  z-index: 1;
-}
-
-#simliar_movie_img {
-  z-index: 1;
-  min-width: 230px;
-  max-width: 230px;
-  min-height: 350px;
-  max-height: 350px;
+#actor_name {
+  
 }

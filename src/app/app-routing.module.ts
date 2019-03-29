@@ -6,7 +6,6 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { SearchComponent } from './components/search/search.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { AboutComponent } from './components/about/about.component';
-import { StarComponent } from './components/star/star.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
 
@@ -35,9 +34,6 @@ const routes: Routes = [
   }, {
     path: 'about',
     component: AboutComponent
-  }, {
-    path: 'star',
-    component: StarComponent
   }, {
     path: '**',
     redirectTo: 'movies/nowplaying'
