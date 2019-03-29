@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { MovieService } from "src/app/services/movie.service";
 import { MoviesDetail, Genre } from "src/app/models/movieDetail";
-import {DomSanitizer} from '@angular/platform-browser';
+import { TrailerModel } from 'src/app/models/TrailerModel';
 
 @Component({
   selector: "app-movie-detail",
@@ -10,16 +10,18 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ["./movie-detail.component.css"]
 })
 export class MovieDetailComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer, private movieService: MovieService, private route: Router) {}
+  constructor(private movieService: MovieService, private route: Router) {}
 
   ngOnInit() {
     this.getMovieDetail();
     this.getCast();
-    this.getTrailer();
+    // this.getTrailer();
+    // this.getSimilarMovies();
   }
 
   imgUrl: string = "https://image.tmdb.org/t/p/original";
-  key: string = "";
+  videoUrl: string = "https://www.youtube.com/watch?v=";
+
   movies: MoviesDetail;
   genres: Genre[];
   casts: Object[] = [];
@@ -56,7 +58,6 @@ export class MovieDetailComponent implements OnInit {
       .then(res => {
         console.log(res.results);
         this.trailers = res.results;
-        this.key = res.results[0].key;
       })
       .catch(e => console.log(e));
   }
@@ -75,8 +76,4 @@ export class MovieDetailComponent implements OnInit {
     this.route.navigateByUrl("movies/movie-detail");
   }
 
-  getVideoUrl()
-  {
-    return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.key);
-  }
 }
