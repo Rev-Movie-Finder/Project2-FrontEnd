@@ -1,6 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { MoviesDetail } from "../models/movieDetail";
+import { TrailerModel } from '../models/TrailerModel';
+import { SimilarMovies } from '../models/similarMovieModel';
+import { StarModel } from '../models/starModel';
+import { StarMovieModel } from '../models/starMovieModel';
+import { StarShowModel } from '../models/starShowModel';
 
 @Injectable({
   providedIn: "root"
@@ -8,6 +13,8 @@ import { MoviesDetail } from "../models/movieDetail";
 export class MovieService {
   private baseUrl: string = "https://api.themoviedb.org/3/";
   private apiKey: string = "api_key=5d0c0be0b57a0b544ed4f305ebcdfee8";
+  private movieUrl: string = "https://api.themoviedb.org/3/movie/"
+  private starUrl: string = "https://api.themoviedb.org/3/person/"
 
   constructor(private http: HttpClient) { }
 
