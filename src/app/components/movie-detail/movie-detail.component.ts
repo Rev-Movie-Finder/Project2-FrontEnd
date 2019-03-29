@@ -14,9 +14,9 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovieDetail();
-    // this.getCast();
+    this.getCast();
     // this.getTrailer();
-    this.getSimilarMovies();
+    // this.getSimilarMovies();
   }
 
   imgUrl: string = "https://image.tmdb.org/t/p/original";
@@ -29,7 +29,6 @@ export class MovieDetailComponent implements OnInit {
   similarMovies: Object[] = [];
 
   getMovieDetail() {
-    console.log("getMovieDetail called");
     this.movieService
       .getMovieDetail()
       .then(res => {
@@ -67,11 +66,14 @@ export class MovieDetailComponent implements OnInit {
     this.movieService
       .getSimilarMovies()
       .then(res => {
-        console.log(res.results);
         this.similarMovies = res.results;
       })
       .catch(e => console.log(e));
   }
 
-  
+  redirectUrl2(id: string) {
+    localStorage.setItem("movieId", id);
+    this.route.navigateByUrl("movies/movie-detail");
+  }
+
 }

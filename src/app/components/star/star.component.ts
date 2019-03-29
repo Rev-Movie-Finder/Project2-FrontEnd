@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { MovieService } from "src/app/services/movie.service";
 import { StarModel } from 'src/app/models/starModel';
 import { StarMovieModel } from 'src/app/models/starMovieModel';
@@ -10,11 +11,11 @@ import { StarMovieModel } from 'src/app/models/starMovieModel';
 })
 export class StarComponent implements OnInit {
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private route: Router) {}
 
   ngOnInit() {
     this.getStar();
-    this.getStarMovie();
+    // this.getStarMovie();
     // this.getStarShow();
   }
 
@@ -40,6 +41,11 @@ export class StarComponent implements OnInit {
         this.starMovies = res.cast;
       })
       .catch(e => console.log(e));
+  }
+
+  redirectUrl(id: string) {
+    localStorage.setItem("movieId", id);
+    this.route.navigateByUrl("movies/movie-detail");
   }
 
   getStarShow() {
