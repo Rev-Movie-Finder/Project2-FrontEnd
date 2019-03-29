@@ -45,10 +45,9 @@ export class SearchComponent implements OnInit {
       this.getMovieSearch();
   }
 
-  redirectUrl(id: string)
-  {
-      localStorage.setItem("movieId", id);
-      this.route.navigateByUrl("movies/movie-detail");
+  redirectUrl(id: string) {
+    localStorage.setItem("movieId", id);
+    this.route.navigateByUrl("movies/movie-detail");
   }
 
   createButtons()
