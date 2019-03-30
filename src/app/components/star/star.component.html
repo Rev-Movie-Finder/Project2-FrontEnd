@@ -7,7 +7,7 @@
     {{ stars.name }}
   </div>
   <div id="star_bday">
-    {{ stars.birthday }}
+    {{ stars.birthday | date: "MM/dd/yyyy" }}
   </div>
   <br />
   <div id="star_bio">
