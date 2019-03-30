@@ -126,14 +126,13 @@ a:active {
 }
 
 #similar_movie_container {
-  text-align: center;
-  min-width: 400px;
   max-width: 400px;
-  padding: 1rem;
+  padding-left: 6rem;
 }
 
 #mTitle {
   font-size: 22px;
+  max-width: 250px;
 }
 
 #simliar_movie_img {
