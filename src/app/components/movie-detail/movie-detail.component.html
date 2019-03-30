@@ -7,7 +7,7 @@
         <h2>{{ movies.title }}</h2>
         <div>
           <i class="fas fa-calendar-alt"></i>
-          <span>{{ movies.release_date }}</span>
+          <span>{{ movies.release_date | date: "MM/dd/yyyy" }}</span>
           <i class="fas fa-stopwatch"></i>
           <span>{{ movies.runtime }}</span>
           <i class="fas fa-star"></i>
