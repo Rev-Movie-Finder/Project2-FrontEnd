@@ -7,11 +7,11 @@
   height: 980px;
 }
 
-img {
+#img_container img {
   height: 980px;
   width: 100%;
   z-index: -1;
-  opacity: 0.95;
+  filter: brightness(50%);
   position: absolute;
 }
 
@@ -26,9 +26,10 @@ h1 {
 }
 
 #info_container {
-  font-size: 18px;
+  font-size: 20px;
   padding-top: 2rem;
   padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 #info_container span {
@@ -87,6 +88,8 @@ a:active {
 }
 
 #actor_name {
+  text-align: center;
+  max-width: 200px;
   font-size: 20px;
 }
 
@@ -124,6 +127,7 @@ a:active {
 }
 
 #mTitle {
+  text-align: center;
   font-size: 22px;
   max-width: 300px;
   z-index: 1;
@@ -131,8 +135,8 @@ a:active {
 
 #simliar_movie_img {
   z-index: 1;
-  min-width: 230px;
-  max-width: 230px;
-  min-height: 350px;
-  max-height: 350px;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 420px;
+  max-height: 420px;
 }

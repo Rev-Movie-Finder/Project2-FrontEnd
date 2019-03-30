@@ -1,5 +1,6 @@
 <div class="container-fluid" id="main_container">
-  <img src="{{ imgUrl }}{{ stars.profile_path }}" />
+  <img *ngIf="!stars.profile_path" class="center" id="stars_img" src="https://s3.amazonaws.com/project2-dt/No-Avatar-High-Definition.jpg"/>
+  <img *ngIf="stars.profile_path" class="center" id="stars_img" src="{{ imgUrl }}{{ stars.profile_path }}"/>
   <br />
   <br />
   <div id="star_name">
