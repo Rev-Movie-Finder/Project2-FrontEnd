@@ -39,8 +39,6 @@
               <img *ngIf="!cast.profile_path" class="center" id="cast_img" src="https://s3.amazonaws.com/project2-dt/profile-jedi.png"/>
               <img *ngIf="cast.profile_path" class="center" id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}"/>
             </a>
-            <br />
-
             <div id="actor_name">
               <div>
                 {{ cast.character }}
@@ -57,20 +55,17 @@
         <iframe width="760" height="515" [src]="getVideoUrl()" allowfullscreen></iframe>
         <br><br><br>
       </div>
-   
-
+  
       <div id="nav_info" *ngFor="let simMovie of similarMovies">
         <div id="addPadding" class="col-lg3-col-sm-4 my-5">
-          <div id="profile_container">
-            <a (click)="redirectUrl2(simMovie.id)" style="cursor: pointer">
+          <div id="similar_movie_container">
+            <a (click)="redirectUrl(simMovie.id)" style="cursor: pointer">
               <img *ngIf="!simMovie.poster_path" id="simliar_movie_img" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
               <img *ngIf="simMovie.poster_path" id="simliar_movie_img" class="center" src="{{ imgUrl }}{{ simMovie.poster_path }}"/>
             </a>
             <br />
-            <div>
-              <div class="text-muted" id="mTitle">
-                {{ simMovie.title }}
-              </div>
+            <div id="mTitle">
+              {{ simMovie.title }}
             </div>
           </div>
         </div>

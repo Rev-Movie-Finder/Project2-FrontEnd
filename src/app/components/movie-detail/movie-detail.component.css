@@ -55,6 +55,7 @@ h1 {
 #bottom_container {
   background-color: rgba(0, 0, 0, 0.87);
   z-index: -1;
+  text-align: center;
 }
 
 #extra_details_container {
@@ -88,8 +89,6 @@ a:active {
 }
 
 #actor_name {
-  text-align: center;
-  max-width: 200px;
   font-size: 20px;
 }
 
@@ -105,7 +104,7 @@ a:active {
 }
 
 #profile_container {
-  padding-left: 50px;
+  text-align: center;
   min-width: 400px;
   max-width: 400px;
 }
@@ -126,17 +125,21 @@ a:active {
   cursor: pointer;
 }
 
-#mTitle {
+#similar_movie_container {
   text-align: center;
+  min-width: 400px;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+#mTitle {
   font-size: 22px;
-  max-width: 300px;
-  z-index: 1;
 }
 
 #simliar_movie_img {
   z-index: 1;
-  min-width: 300px;
-  max-width: 300px;
-  min-height: 420px;
-  max-height: 420px;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 370px;
+  max-height: 370px;
 }
