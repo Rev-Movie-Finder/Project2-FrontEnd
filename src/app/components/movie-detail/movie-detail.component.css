@@ -114,6 +114,10 @@ a:active {
   text-align: center;
 }
 
+iframe {
+  border: 5px solid #212529;
+}
+
 #more_info {
   background-color: rgba(0, 0, 0, 0.87);
   padding-bottom: 1rem;

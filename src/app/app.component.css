@@ -1,12 +1,21 @@
 #hero_container {
   font-family: "Roboto", sans-serif;
-  height: 100%;
 }
 
 .col-3 {
   padding-right: 0px;
   padding-left: 0px;
+}
+
+#sideBar {
+  position: fixed;
   height: 100vh;
+}
+
+#main-container {
+  position: static;
+  margin-left: 10%;
+  width: 100vw;
 }
 
 .col-md {

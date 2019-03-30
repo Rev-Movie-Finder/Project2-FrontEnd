@@ -66,5 +66,6 @@ export class UpcomingComponent implements OnInit {
   {
     localStorage.setItem("pageIndex", button);
     this.getUpcoming();
+    window.scrollTo(0, 0);
   }
 }

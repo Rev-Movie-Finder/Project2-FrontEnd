@@ -55,7 +55,6 @@ export class MovieDetailComponent implements OnInit {
     this.movieService
       .getTrailer()
       .then(res => {
-        console.log(res.results);
         this.trailers = res.results;
         this.key = res.results[0].key;
       })
