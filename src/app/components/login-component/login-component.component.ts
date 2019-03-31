@@ -23,6 +23,8 @@ export class LoginComponentComponent implements OnInit {
 
     this.postloginService.verifyUser(user2).subscribe((response) => {
       console.log('response from post is ', response);
+      console.log(response)
+      window.location.href='profile';
     });
 }
 }

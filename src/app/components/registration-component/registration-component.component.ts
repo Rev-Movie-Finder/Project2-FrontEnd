@@ -13,6 +13,8 @@ export class RegistrationComponentComponent implements OnInit {
   constructor(private postuserService: PostUserService) { }
   ngOnInit() {
   }
+  showMsg: boolean = false;
+  showMsg2: boolean = false;
 
   options = ["male", "female", "other"];
   optionSelected: any;
@@ -35,8 +37,11 @@ export class RegistrationComponentComponent implements OnInit {
 
     this.postuserService.addUser(user).subscribe((response) => {
       console.log('response from post is ', response);
-    });
-    
+      this.showMsg= true;
+    }
+    );
+    this.showMsg2= true;
+
   } 
   
 }
