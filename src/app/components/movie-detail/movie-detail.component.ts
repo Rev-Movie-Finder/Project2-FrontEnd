@@ -72,7 +72,8 @@ export class MovieDetailComponent implements OnInit {
 
   redirectUrl2(id: string) {
     localStorage.setItem("movieId", id);
-    this.route.navigateByUrl("movies/movie-detail");
+    this.route.navigateByUrl("/", {skipLocationChange: true})
+      .then(()=>this.route.navigate(['movies/movie-detail']));
   }
 
   getVideoUrl()
