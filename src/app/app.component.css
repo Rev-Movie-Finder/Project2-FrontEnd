@@ -51,7 +51,8 @@
 
 #main-container {
   margin-left: 252px;
-  font-size: 28px; 
+  font-size: 28px;
+  height: 100vh; 
 }
 
 @media screen and (max-height: 450px) {
