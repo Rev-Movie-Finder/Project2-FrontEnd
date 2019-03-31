@@ -17,6 +17,7 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MyMaterialModule } from './material.module';
     AboutComponent,
     StarComponent,
     LoginComponentComponent,
-    RegistrationComponentComponent
+    RegistrationComponentComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

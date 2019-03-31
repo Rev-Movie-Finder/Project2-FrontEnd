@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostloginService } from 'src/app/services/postloginService';
+
 
 @Component({
   selector: 'app-login-component',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postloginService: PostloginService) { }
 
   ngOnInit() {
   }
 
+
+  tryLogin(uname: string, pass: string, ): void {
+
+    let user2 = {username: uname,password: pass}
+    
+    console.log(user2);
+
+    this.postloginService.verifyUser(user2).subscribe((response) => {
+      console.log('response from post is ', response);
+    });
+}
 }
