@@ -39,7 +39,7 @@ import { MyMaterialModule } from './material.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MyMaterialModule,
+    MyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
