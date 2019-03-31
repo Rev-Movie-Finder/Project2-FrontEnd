@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { MovieService } from "src/app/services/movie.service";
 import { MoviesDetail, Genre } from "src/app/models/movieDetail";
-import {DomSanitizer} from '@angular/platform-browser';
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: "app-movie-detail",
@@ -10,7 +10,11 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ["./movie-detail.component.css"]
 })
 export class MovieDetailComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer, private movieService: MovieService, private route: Router) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private movieService: MovieService,
+    private route: Router
+  ) {}
 
   ngOnInit() {
     this.getMovieDetail();
@@ -72,11 +76,14 @@ export class MovieDetailComponent implements OnInit {
 
   redirectUrl2(id: string) {
     localStorage.setItem("movieId", id);
-    this.route.navigateByUrl("movies/movie-detail");
+    this.route
+      .navigateByUrl("/", { skipLocationChange: true })
+      .then(() => this.route.navigate(["movies/movie-detail"]));
   }
 
-  getVideoUrl()
-  {
-    return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.key);
+  getVideoUrl() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      "https://www.youtube.com/embed/" + this.key
+    );
   }
 }

@@ -2,7 +2,6 @@ import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {StickyModule} from 'ng2-sticky-kit';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,8 +39,7 @@ import { MyMaterialModule } from './material.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MyMaterialModule,
-    StickyModule
+    MyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

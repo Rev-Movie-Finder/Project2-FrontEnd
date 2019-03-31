@@ -1,33 +1,3 @@
-/* #hero_container {
-  font-family: "Roboto", sans-serif;
-}
-
-.col-3 {
-  padding-right: 0px;
-  padding-left: 0px;
-}
-
-#sideBar {
-  position: fixed;
-  height: 100vh;
-}
-
-#main-container {
-  position: static;
-  margin-left: 10%;
-  width: 100vw;
-}
-
-.col-md {
-  padding: 0px;
-}
-
-.row {
-  margin-right: 0px;
-  margin-left: 0px;
-  height: 100vh;
-} */
-
 #sideNav {
   height: 100%;
   width: 252px;
@@ -52,7 +22,6 @@
 #main-container {
   margin-left: 252px;
   font-size: 28px;
-  height: 100vh; 
 }
 
 @media screen and (max-height: 450px) {

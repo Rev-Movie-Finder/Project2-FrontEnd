@@ -13,7 +13,7 @@ export class TrendingComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem("pageIndex", "1");
-    this.getTrending();
+    this.getPopular();
   }
 
   minPage: number = 1;
@@ -23,8 +23,8 @@ export class TrendingComponent implements OnInit {
 
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
-  getTrending() {
-    this.movieService.getTrending()
+  getPopular() {
+    this.movieService.getPopular()
     .then((res)=>{
       const data = res;
       this.movies = data.results;
@@ -65,7 +65,7 @@ export class TrendingComponent implements OnInit {
   pageClick(button: string)
   {
     localStorage.setItem("pageIndex", button);
-    this.getTrending();
+    this.getPopular();
     window.scrollTo(0, 0);
   }
 }

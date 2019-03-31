@@ -26,7 +26,7 @@ export class MovieService {
     return this.apiKey;
   }
 
-  getPopular(): Promise<MoviesModel> {
+  getNowPlaying(): Promise<MoviesModel> {
     return this.http
       .get<MoviesModel>(
         `${this.baseUrl}movie/now_playing?${
@@ -46,7 +46,7 @@ export class MovieService {
       .toPromise();
   }
 
-  getTrending(): Promise<MoviesModel> {
+  getPopular(): Promise<MoviesModel> {
     return this.http
       .get<MoviesModel>(
         `${this.baseUrl}movie/popular?${

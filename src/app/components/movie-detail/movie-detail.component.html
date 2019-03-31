@@ -59,7 +59,7 @@
       <div id="nav_info" *ngFor="let simMovie of similarMovies">
         <div id="addPadding" class="col-lg3-col-sm-4 my-5">
           <div id="similar_movie_container">
-            <a (click)="redirectUrl(simMovie.id)" style="cursor: pointer">
+            <a (click)="redirectUrl2(simMovie.id)" style="cursor: pointer">
               <img *ngIf="!simMovie.poster_path" id="simliar_movie_img" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
               <img *ngIf="simMovie.poster_path" id="simliar_movie_img" class="center" src="{{ imgUrl }}{{ simMovie.poster_path }}"/>
             </a>
