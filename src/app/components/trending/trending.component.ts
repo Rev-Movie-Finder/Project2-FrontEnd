@@ -66,5 +66,6 @@ export class TrendingComponent implements OnInit {
   {
     localStorage.setItem("pageIndex", button);
     this.getTrending();
+    window.scrollTo(0, 0);
   }
 }

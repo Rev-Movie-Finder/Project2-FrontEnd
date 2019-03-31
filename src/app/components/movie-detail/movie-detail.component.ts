@@ -14,8 +14,9 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovieDetail();
-    this.getCast();
+    // this.getCast();
     this.getTrailer();
+    // this.getSimilarMovies();
   }
 
   imgUrl: string = "https://image.tmdb.org/t/p/original";
@@ -54,7 +55,6 @@ export class MovieDetailComponent implements OnInit {
     this.movieService
       .getTrailer()
       .then(res => {
-        console.log(res.results);
         this.trailers = res.results;
         this.key = res.results[0].key;
       })

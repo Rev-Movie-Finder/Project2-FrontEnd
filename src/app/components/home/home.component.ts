@@ -63,5 +63,6 @@ export class HomeComponent implements OnInit {
   {
     localStorage.setItem("pageIndex", button);
     this.getPopular();
+    window.scrollTo(0, 0);
   }
 }
