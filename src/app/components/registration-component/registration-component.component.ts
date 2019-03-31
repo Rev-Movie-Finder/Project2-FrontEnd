@@ -14,7 +14,7 @@ export class RegistrationComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  options = ["Male", "Female", "Other"];
+  options = ["male", "female", "other"];
   optionSelected: any;
   
   selectedGender: string ="";
