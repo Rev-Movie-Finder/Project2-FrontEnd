@@ -1,4 +1,4 @@
-#hero_container {
+/* #hero_container {
   font-family: "Roboto", sans-serif;
 }
 
@@ -26,4 +26,35 @@
   margin-right: 0px;
   margin-left: 0px;
   height: 100vh;
+} */
+
+#sideNav {
+  height: 100%;
+  width: 252px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+#main-container {
+  margin-left: 252px;
+  font-size: 28px; 
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
