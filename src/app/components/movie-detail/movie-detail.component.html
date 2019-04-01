@@ -24,9 +24,9 @@
   </div>
   
   <div id="more_info">
-    <div (click)="getCast()">CAST</div>
-    <div (click)="getTrailer()">TRAILER</div>
-    <div (click)="getSimilarMovies()">SIMILAR MOVIES</div>
+    <div *ngIf="currentlyOpen == 2 || currentlyOpen == 3" (click)="getCast()">CAST</div>
+    <div *ngIf="currentlyOpen == 1 || currentlyOpen == 3" (click)="getTrailer()">TRAILER</div>
+    <div *ngIf="currentlyOpen == 1 || currentlyOpen == 2" (click)="getSimilarMovies()">SIMILAR MOVIES</div>
   </div>
 
   <div id="bottom_container">

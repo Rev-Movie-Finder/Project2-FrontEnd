@@ -5,7 +5,6 @@ import { TrailerModel } from "../models/TrailerModel";
 import { SimilarMovies } from "../models/similarMovieModel";
 import { StarModel } from "../models/starModel";
 import { StarMovieModel } from "../models/starMovieModel";
-import { StarShowModel } from "../models/starShowModel";
 
 @Injectable({
   providedIn: "root"
@@ -13,8 +12,6 @@ import { StarShowModel } from "../models/starShowModel";
 export class MovieService {
   private baseUrl: string = "https://api.themoviedb.org/3/";
   private apiKey: string = "api_key=5d0c0be0b57a0b544ed4f305ebcdfee8";
-  private movieUrl: string = "https://api.themoviedb.org/3/movie/";
-  private starUrl: string = "https://api.themoviedb.org/3/person/";
 
   constructor(private http: HttpClient) {}
 
@@ -118,16 +115,6 @@ export class MovieService {
         `${this.baseUrl}person/${localStorage.getItem(
           "castId"
         )}/movie_credits?${this.apiKey}`
-      )
-      .toPromise();
-  }
-
-  getStarShow(): Promise<StarShowModel> {
-    return this.http
-      .get<StarShowModel>(
-        `${this.baseUrl}person/${localStorage.getItem("castId")}/tv_credits?${
-          this.apiKey
-        }`
       )
       .toPromise();
   }
