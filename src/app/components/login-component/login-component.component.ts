@@ -13,7 +13,8 @@ export class LoginComponentComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showMsg: boolean = false;
+  
 
   tryLogin(uname: string, pass: string, ): void {
 
@@ -24,7 +25,12 @@ export class LoginComponentComponent implements OnInit {
     this.postloginService.verifyUser(user2).subscribe((response) => {
       console.log('response from post is ', response);
       console.log(response)
-      window.location.href='profile';
+      if(response[0] != null){
+        window.location.href='profile';
+      }else{
+        this.showMsg= true;
+      }
+      
     });
 }
 }

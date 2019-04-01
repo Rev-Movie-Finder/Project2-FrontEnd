@@ -18,7 +18,7 @@ export class RegistrationComponentComponent implements OnInit {
 
   options = ["male", "female", "other"];
   optionSelected: any;
-  
+
   selectedGender: string ="";
   onOptionsSelected(event){
     this.selectedGender = event;

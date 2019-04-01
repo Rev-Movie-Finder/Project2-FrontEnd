@@ -16,20 +16,21 @@
             </mat-form-field>
             <mat-form-field class="full-width">
                <mat-label>Address</mat-label>
-               <input  matInput  placeholder="Address" name="address" #address required>
+               <input  matInput  placeholder="Address" name="address" #address >
             </mat-form-field>
             <mat-form-field class="full-width">
                <mat-label>Email</mat-label>
-               <input  matInput  placeholder="Email" name="email" #email>
+               <input  matInput  placeholder="Email" name="email" #email  ngModel  required minlength="3">
             </mat-form-field>
             <mat-form-field class="full-width">
                <mat-label>Password</mat-label>
                <input  matInput type="password" placeholder="Password"  name="password" #password>
          </mat-form-field>
                <option disabled value="0" class="hideoption">Select Your Gender</option>
-               <select class="example-section" required [(ngModel)]='optionSelected' name="Gender-{{option}}" (ngModelChange)='onOptionsSelected($event)'>
+               <select   class="example-section" required [(ngModel)]='optionSelected' name="Gender-{{option}}" (ngModelChange)='onOptionsSelected($event)' >
+                     <option class='option' *ngFor='let option of options'  [value]="option"  >{{option}}</option>
                      <option value="optionSelected" disabled="disabled">---Select Options---</option>
-                     <option class='option' *ngFor='let option of options'  [value]="option">{{option}}</option>
+
               </select>
             <mat-form-field class="full-width">
                <mat-label>Date of Birth</mat-label>
@@ -39,27 +40,25 @@
             </mat-form-field>
             
          </form>
-         
       </mat-card-content>
       <mat-card-actions>
-         <button mat-raised-button (click)="add(email.value,password.value,fname.value,lname.value,address.value,date.value)" color="primary">REGISTER</button>
-        
-         <div class="row"  *ngIf="showMsg">
-            <div class="col-xs-10">
-              <p class="alert alert-success">
-                  <strong>Registration Success!</strong> Please click here to login!.
-              </p>
-            </div>
-          </div>
+         <button mat-raised-button (click)="add(email.value,password.value,fname.value,lname.value,address.value,date.value)" color="primary">REGISTER</button>       
          <button mat-raised-button routerLink="../login"  color="primary">LOGIN</button>
-         <div class="row"  *ngIf="showMsg2">
-            <div class="col-xs-10">
-              <p class="alert alert-danger">
-                  <strong>Registration Failed!</strong> please try Again!.
-              </p>
-            </div>
-          </div>
       </mat-card-actions>
+      <div class="row"  *ngIf="showMsg">
+      <div class="col-xs-8">
+         <p class="alert alert-success">
+             <strong>Registration Success!</strong> Please click login!.
+         </p>
+       </div>
+     </div>
+      <div class="row"  *ngIf="showMsg2">
+         <div class="col-xs-8">
+           <p class="alert alert-danger">
+               <strong>Registration Failed!</strong> please try Again!.
+           </p>
+         </div>
+       </div>
    </mat-card>
    </div>
    </div>
