@@ -20,9 +20,14 @@ export class MovieDetailComponent implements OnInit {
     this.getMovieDetail();
     // this.getCast();
     this.getTrailer();
+<<<<<<< Updated upstream
     // this.getSimilarMovies();
+=======
+    this.currentlyOpen = 1;
+>>>>>>> Stashed changes
   }
 
+  currentlyOpen: number;
   imgUrl: string = "https://image.tmdb.org/t/p/original";
   key: string = "";
   movies: MoviesDetail;
@@ -42,12 +47,13 @@ export class MovieDetailComponent implements OnInit {
   }
 
   getCast() {
+    this.currentlyOpen = 1;
     this.movieService
       .getCast()
       .then(res => {
         this.casts = res.cast;
       })
-      .catch(e => console.log(e));
+      .catch(e => console.log(e));  
   }
 
   redirectUrl(id: string) {
@@ -56,16 +62,21 @@ export class MovieDetailComponent implements OnInit {
   }
 
   getTrailer() {
+    this.currentlyOpen = 2;
     this.movieService
       .getTrailer()
       .then(res => {
+<<<<<<< Updated upstream
         this.trailers = res.results;
+=======
+>>>>>>> Stashed changes
         this.key = res.results[0].key;
       })
       .catch(e => console.log(e));
   }
 
   getSimilarMovies() {
+    this.currentlyOpen = 3;
     this.movieService
       .getSimilarMovies()
       .then(res => {
@@ -76,9 +87,14 @@ export class MovieDetailComponent implements OnInit {
 
   redirectUrl2(id: string) {
     localStorage.setItem("movieId", id);
+<<<<<<< Updated upstream
     this.route
       .navigateByUrl("/", { skipLocationChange: true })
       .then(() => this.route.navigate(["movies/movie-detail"]));
+=======
+    this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+    this.route.navigate(["movies/movie-detail"]));
+>>>>>>> Stashed changes
   }
 
   getVideoUrl() {
