@@ -31,7 +31,7 @@
   <div id="bottom_container">
     <div class="row" id="extra_details_container">
       <div id="nav_info" *ngFor="let movie of starMovies">
-        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
+        <div id="addPadding" *ngIf="currentlyOpen == 1" class="col-lg3-col-sm-4 my-5">
           <div id="profile_container">
             <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
               <img
@@ -59,7 +59,7 @@
       </div>
 
       <div id="nav_info" *ngFor="let show of starShows">
-        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
+        <div id="addPadding" *ngIf="currentlyOpen == 2" class="col-lg3-col-sm-4 my-5">
           <div id="profile_container">
             <img
               *ngIf="!show.poster_path"

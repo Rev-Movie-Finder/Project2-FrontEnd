@@ -15,12 +15,13 @@ export class StarComponent implements OnInit {
 
   ngOnInit() {
     this.getStar();
-    // this.getStarMovie();
-    // this.getStarShow();
+    this.getStarMovie();
+    this.getStarShow();
+    this.currentlyOpen = 1;
   }
 
+  currentlyOpen: number;
   imgUrl: string = "https://image.tmdb.org/t/p/original";
-
   stars: StarModel;
   starMovies: Object[] = [];
   starShows: Object[] = [];
@@ -35,6 +36,7 @@ export class StarComponent implements OnInit {
   }
 
   getStarMovie() {
+    this.currentlyOpen = 1;
     this.movieService
       .getStarMovie()
       .then(res => {
@@ -49,6 +51,7 @@ export class StarComponent implements OnInit {
   }
 
   getStarShow() {
+    this.currentlyOpen = 2;
     this.movieService
       .getStarShow()
       .then(res => {

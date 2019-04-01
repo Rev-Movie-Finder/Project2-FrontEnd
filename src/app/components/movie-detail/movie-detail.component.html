@@ -51,14 +51,13 @@
         </div>
       </div>
 
-      <div id="trailer_container"  *ngIf="currentlyOpen == 2">
-        <iframe width="760" height="515" [src]="getVideoUrl()" allowfullscreen></iframe>
+      <div id="trailer_container">
+        <iframe *ngIf="currentlyOpen == 2" width="760" height="515" [src]="getVideoUrl()" allowfullscreen></iframe>
         <br><br><br>
       </div>
   
       <div id="nav_info" *ngFor="let simMovie of similarMovies">
-<<<<<<< Updated upstream
-        <div id="addPadding" class="col-lg3-col-sm-4 my-5">
+        <div id="addPadding" *ngIf="currentlyOpen == 3" class="col-lg3-col-sm-4 my-5">
           <div id="similar_movie_container">
             <a (click)="redirectUrl2(simMovie.id)" style="cursor: pointer">
               <img *ngIf="!simMovie.poster_path" id="simliar_movie_img" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
@@ -67,34 +66,10 @@
             <br />
             <div class="text-center" id="mTitle">
               {{ simMovie.title }}
-=======
-          <div id="addPadding" *ngIf="currentlyOpen == 3" class="col-lg3-col-sm-4 my-5">
-            <div id="profile_container">
-              <a (click)="redirectUrl2(simMovie.id)" style="cursor: pointer">
-                <img *ngIf="!simMovie.poster_path" id="simliar_movie_img" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
-                <img *ngIf="simMovie.poster_path" id="simliar_movie_img" class="center" src="{{ imgUrl }}{{ simMovie.poster_path }}"/>
-              </a>
-              <br /><br /><br /><br /><br /><br /><br />
-              <br />
-              <br />
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <div>
-                <div class="text-muted" id="mTitle">
-                  {{ simMovie.title }}
-                </div>
-              </div>
->>>>>>> Stashed changes
             </div>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
-  
-  </div>
+</div>

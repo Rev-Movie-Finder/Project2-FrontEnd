@@ -18,13 +18,9 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovieDetail();
-    // this.getCast();
+    this.getCast();
     this.getTrailer();
-<<<<<<< Updated upstream
-    // this.getSimilarMovies();
-=======
     this.currentlyOpen = 1;
->>>>>>> Stashed changes
   }
 
   currentlyOpen: number;
@@ -66,10 +62,6 @@ export class MovieDetailComponent implements OnInit {
     this.movieService
       .getTrailer()
       .then(res => {
-<<<<<<< Updated upstream
-        this.trailers = res.results;
-=======
->>>>>>> Stashed changes
         this.key = res.results[0].key;
       })
       .catch(e => console.log(e));
@@ -87,14 +79,8 @@ export class MovieDetailComponent implements OnInit {
 
   redirectUrl2(id: string) {
     localStorage.setItem("movieId", id);
-<<<<<<< Updated upstream
-    this.route
-      .navigateByUrl("/", { skipLocationChange: true })
-      .then(() => this.route.navigate(["movies/movie-detail"]));
-=======
     this.route.navigateByUrl('/', {skipLocationChange: true}).then(()=>
     this.route.navigate(["movies/movie-detail"]));
->>>>>>> Stashed changes
   }
 
   getVideoUrl() {
