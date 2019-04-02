@@ -5,6 +5,7 @@ import { TrailerModel } from "../models/TrailerModel";
 import { SimilarMovies } from "../models/similarMovieModel";
 import { StarModel } from "../models/starModel";
 import { StarMovieModel } from "../models/starMovieModel";
+import { FavoriteMovieModel } from '../models/favoriteMovieModel';
 
 @Injectable({
   providedIn: "root"
@@ -118,4 +119,13 @@ export class MovieService {
       )
       .toPromise();
   }
+
+  getFavoriteMovie(): Promise<FavoriteMovieModel> {
+    return this.http
+      .get<FavoriteMovieModel>(
+        `http://moviefinder.us-east-2.elasticbeanstalk.com/users`
+      )
+      .toPromise();
+  }
+
 }

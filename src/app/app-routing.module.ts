@@ -10,6 +10,7 @@ import { StarComponent } from './components/star/star.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,9 @@ const routes: Routes = [
   }, {
     path: 'star',
     component: StarComponent
+  }, {
+    path: 'favorite',
+    component: FavoriteComponent
   }, {
     path: '**',
     redirectTo: 'movies/nowplaying'
