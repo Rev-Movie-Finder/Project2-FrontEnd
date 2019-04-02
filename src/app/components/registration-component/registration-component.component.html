@@ -28,8 +28,8 @@
          </mat-form-field>
                <option disabled value="0" class="hideoption">Select Your Gender</option>
                <select   class="example-section" required [(ngModel)]='optionSelected' name="Gender-{{option}}" (ngModelChange)='onOptionsSelected($event)' >
-                     <option class='option' *ngFor='let option of options'  [value]="option"  >{{option}}</option>
-                     <option value="optionSelected" disabled="disabled">---Select Options---</option>
+                  <option value="optionSelected" disabled="disabled">---Select Options---</option>
+                  <option class='option' *ngFor='let option of options'  [value]="option"  >{{option}}</option>
 
               </select>
             <mat-form-field class="full-width">
