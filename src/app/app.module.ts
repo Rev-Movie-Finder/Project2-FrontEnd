@@ -18,6 +18,7 @@ import { RegistrationComponentComponent } from './components/registration-compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     StarComponent,
     LoginComponentComponent,
     RegistrationComponentComponent,
-    ProfileComponent
+    ProfileComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

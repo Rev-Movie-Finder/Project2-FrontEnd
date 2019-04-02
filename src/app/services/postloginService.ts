@@ -14,4 +14,7 @@ export class PostloginService {
   verifyUser (user2: user2): Observable<user2> { 
     return this.http.post<user2>(this.postUrl, user2);
   }
+
+  
+
 }

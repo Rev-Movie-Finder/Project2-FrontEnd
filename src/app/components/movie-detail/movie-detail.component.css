@@ -52,6 +52,14 @@ h1 {
   font-weight: 500;
 }
 
+#buttons {
+  padding-top: 1rem;
+}
+
+#watchlist {
+  margin-left: 1rem;
+}
+
 #bottom_container {
   background-color: rgba(0, 0, 0, 0.87);
   z-index: -1;
