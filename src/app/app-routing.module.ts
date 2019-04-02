@@ -9,8 +9,13 @@ import { AboutComponent } from './components/about/about.component';
 import { StarComponent } from './components/star/star.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
+  {
+    path:'profile',
+    component: ProfileComponent,
+  },
   {
     path:'register',
     component: RegistrationComponentComponent
