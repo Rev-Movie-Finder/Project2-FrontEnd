@@ -36,17 +36,3 @@ export class LoginComponentComponent implements OnInit {
     });
   }
 }
-// tryLogin(uname: string, pass: string, ): void {
-
-//   let user2 = {username: uname,password: pass}
-//   this.postloginService.verifyUser(user2.username, user2.password).subscribe((res)=>{
-//     let user3 = res;
-//     if(user3 == null){
-//       console.log("Login Failed using:");
-//       console.log("username: " + user2.username + "\nPassword: " + user2.password);
-//     } else {
-//       console.log("Login Successful! Logged in with user:\n" + user3);
-//     }
-// });
-// }
-// }
