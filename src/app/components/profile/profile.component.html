@@ -8,15 +8,18 @@
               </div>
               <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                   <div class="container" style="border-bottom:1px solid black">
-                      <h2>HELLO, John Doe</h2>
+                      <h2>HELLO, {{user3.username}};
+                      </h2>
                   </div>
        <hr>
       <ul class="container details">
-      <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
-      <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
-      <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
-      <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</a></p></li>
-      </ul>
+      <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>{{ user3.id }}</p></li>
+      <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{user3.birthday}}</p></li>
+      <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">{{user3.email}}</a></p></li>
+     <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">{{user3.wishlist}}</a></p></li>
+      <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>{{user3.favMovies[0].id}}</p></li>
+
+    </ul>
                   </div>
           </div>
       </div>

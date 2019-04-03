@@ -7,31 +7,17 @@
       <mat-card-content>
          <form class="my-form">  
             <mat-form-field class="full-width">
-               <mat-label>First Name</mat-label>
-               <input  matInput  placeholder="First name"  name="fname"  #fname required>
-            </mat-form-field>
-            <mat-form-field class="full-width">
-               <mat-label>Last Name</mat-label>
-               <input  matInput  placeholder="Last Name" name="lname" #lname required>
-            </mat-form-field>
-            <mat-form-field class="full-width">
-               <mat-label>Address</mat-label>
-               <input  matInput  placeholder="Address" name="address" #address >
-            </mat-form-field>
-            <mat-form-field class="full-width">
-               <mat-label>Email</mat-label>
-               <input  matInput  placeholder="Email" name="email" #email  ngModel  required minlength="3">
+               <mat-label>User Name</mat-label>
+               <input  matInput  placeholder="User Name" name=" username" #username  ngModel  required minlength="3" >
             </mat-form-field>
             <mat-form-field class="full-width">
                <mat-label>Password</mat-label>
-               <input  matInput type="password" placeholder="Password"  name="password" #password>
+               <input  matInput type="password" placeholder="Password"  name="password" #password  ngModel  required minlength="3">
          </mat-form-field>
-               <option disabled value="0" class="hideoption">Select Your Gender</option>
-               <select   class="example-section" required [(ngModel)]='optionSelected' name="Gender-{{option}}" (ngModelChange)='onOptionsSelected($event)' >
-                  <option value="optionSelected" disabled="disabled">---Select Options---</option>
-                  <option class='option' *ngFor='let option of options'  [value]="option"  >{{option}}</option>
-
-              </select>
+            <mat-form-field class="full-width">
+               <mat-label>Email</mat-label>
+               <input  matInput  placeholder="Email" type="email" name="email" #email >
+            </mat-form-field>
             <mat-form-field class="full-width">
                <mat-label>Date of Birth</mat-label>
                <input matInput [matDatepicker]="picker" placeholder="Choose a date"  #date>
@@ -42,7 +28,7 @@
          </form>
       </mat-card-content>
       <mat-card-actions>
-         <button mat-raised-button (click)="add(email.value,password.value,fname.value,lname.value,address.value,date.value)" color="primary">REGISTER</button>       
+         <button mat-raised-button (click)="add(username.value,password.value,email.value,date.value)" color="primary">REGISTER</button>       
          <button mat-raised-button routerLink="../login"  color="primary">LOGIN</button>
       </mat-card-actions>
       <div class="row"  *ngIf="showMsg">
