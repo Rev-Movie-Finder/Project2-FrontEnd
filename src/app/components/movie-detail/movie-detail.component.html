@@ -30,8 +30,8 @@
           {{ movies.overview }}
         </div>
         <div id="buttons">
-          <button class="btn btn-danger">Favorite</button>
-          <button class="btn btn-primary" id="watchlist">Watchlist</button>
+          <button [ngClass]="favoriteStyle" (click)="favoriteClicked()">{{favoriteBtnText}}</button>
+          <button [ngClass]="watchStyle" id="watchlist" (click)="watchClicked()">{{watchBtnText}}</button>
         </div>
       </div>
     </div>

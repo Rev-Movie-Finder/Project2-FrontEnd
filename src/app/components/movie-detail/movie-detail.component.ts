@@ -3,6 +3,8 @@ import { Router } from "@angular/router";
 import { MovieService } from "src/app/services/movie.service";
 import { MoviesDetail, Genre } from "src/app/models/movieDetail";
 import { DomSanitizer } from "@angular/platform-browser";
+import { toUnicode } from 'punycode';
+import { interceptingHandler } from '@angular/common/http/src/module';
 import { ReleaseDateModel } from 'src/app/models/releaseDateModel';
 
 @Component({
@@ -25,6 +27,12 @@ export class MovieDetailComponent implements OnInit {
     this.currentlyOpen = 1;
   }
 
+  watchStyle: string = "btn btn-primary";
+  isWatch: boolean = false;
+  watchBtnText: string = "Watchlist";
+  favoriteStyle: string = "btn btn-danger";
+  isFavorite: boolean = false;
+  favoriteBtnText: string = "Favorite";
   currentlyOpen: number;
   imgUrl: string = "https://image.tmdb.org/t/p/original";
   key: string = "";
@@ -34,6 +42,38 @@ export class MovieDetailComponent implements OnInit {
   casts: Object[] = [];
   trailers: Object[] = [];
   similarMovies: Object[] = [];
+
+  favoriteClicked()
+  {
+    if(this.isFavorite)
+    {
+      this.favoriteStyle = "btn btn-danger";
+      this.isFavorite = false;
+      this.favoriteBtnText = "Favorite";
+    }
+    else
+    {
+      this.favoriteStyle = "btn btn-outline-danger";
+      this.isFavorite = true;
+      this.favoriteBtnText = "Added to Favorites " + String.fromCharCode(10003);
+    }
+  }
+
+  watchClicked()
+  {
+    if(this.isWatch)
+    {
+      this.watchStyle = "btn btn-primary";
+      this.isWatch = false;
+      this.watchBtnText = "Watchlist";
+    }
+    else
+    {
+      this.watchStyle = "btn btn-outline-primary";
+      this.isWatch = true;
+      this.watchBtnText = "Added to Watchlist " + String.fromCharCode(10003);
+    }
+  }
 
   getMovieDetail() {
     this.movieService
