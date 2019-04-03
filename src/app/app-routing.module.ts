@@ -12,7 +12,6 @@ import { RegistrationComponentComponent } from './components/registration-compon
 import { ProfileComponent } from './components/profile/profile.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
-import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -24,9 +23,6 @@ const routes: Routes = [
   }, {
     path:'login',
     component: LoginComponentComponent
-  }, {
-    path:'logout',
-    component: LogoutComponent
   }, {
     path: 'search',
     component: SearchComponent,

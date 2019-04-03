@@ -31,25 +31,25 @@
       <span>Trending</span>
     </a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" *ngIf="!userId">
     <a class="nav-link" routerLink="login">
       <i class="fas fa-user"></i>
       <span>Sign in</span>
     </a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" *ngIf="userId">
     <a class="nav-link" routerLink="profile">
       <i class="fas fa-user"></i>
       <span>Profile</span>
     </a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" *ngIf="userId">
     <a class="nav-link" routerLink="favorite">
       <i class="fas fa-heart"></i>
       <span>Favorite</span>
     </a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" *ngIf="userId">
     <a class="nav-link" routerLink="watchlist">
       <i class="fas fa-th-list"></i>
       <span>Watch list</span>
@@ -61,8 +61,8 @@
       <span>About</span>
     </a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="logout">
+  <li class="nav-item" *ngIf="userId" (click)="logoutUser()">
+    <a class="nav-link" href="#">
       <i class="fas fa-sign-out-alt"></i>
       <span>Logout</span>
     </a>
