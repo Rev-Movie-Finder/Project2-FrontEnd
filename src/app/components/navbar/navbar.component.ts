@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouteReuseStrategy } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +14,12 @@ export class NavbarComponent implements OnInit {
   inputValue: string;
 
   ngOnInit() {
+  }
+
+  logoutUser()
+  {
+    localStorage.clear();
+    this.router.navigateByUrl("movies/nowplaying");
   }
 
   generateUrl()

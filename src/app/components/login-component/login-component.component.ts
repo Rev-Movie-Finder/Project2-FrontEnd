@@ -19,6 +19,7 @@ export class LoginComponentComponent implements OnInit {
       console.log("response from post is ", response);
       console.log(response);
 
+<<<<<<< Updated upstream
       if (response[0] != null) {
         window.location.href = "movies/nowplaying";
 
@@ -45,6 +46,21 @@ export class LoginComponentComponent implements OnInit {
         
       } else {
         this.showMsg = true;
+=======
+      if(response[0] != null){
+        
+        window.location.href='profile';
+        localStorage.setItem("userId", JSON.stringify(response[0].id));
+        localStorage.setItem("username", JSON.stringify(response[0].username));
+        localStorage.setItem("userEmail", JSON.stringify(response[0].email));
+        localStorage.setItem("userBirthday", JSON.stringify(response[0].birthday));
+        localStorage.setItem("userFavMovies", JSON.stringify(response[0].favoriteMovies[0].id ));
+        console.log(window.localStorage.getItem("favMovies"));  
+        localStorage.setItem("userWishlist", JSON.stringify(response[0].wishList[0]));
+        console.log(window.localStorage.getItem("wishlist"));       
+      }else{
+        this.showMsg= true;
+>>>>>>> Stashed changes
       }
     });
   }

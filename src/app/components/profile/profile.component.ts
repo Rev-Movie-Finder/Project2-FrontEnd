@@ -13,14 +13,13 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
     user3: user3 = {
-    id : parseInt(window.localStorage.getItem("id")),
-    email: JSON.parse(window.localStorage.getItem("email")),
-    username: JSON.parse(window.localStorage.getItem("username")),
+    id : parseInt(localStorage.getItem("userId")),
+    email: JSON.parse(localStorage.getItem("userEmail")),
+    username: JSON.parse(localStorage.getItem("username")),
     password: "",
-    birthday: JSON.parse(window.localStorage.getItem("birthday")),
-    favoriteMovies:JSON.parse(window.localStorage.getItem("favMovies")),
-     wishList: []
-
+    birthday: JSON.parse(localStorage.getItem("userBirthday")),
+    favoriteMovies:JSON.parse(localStorage.getItem("userFavMovies")),
+    wishList: JSON.parse(localStorage.getItem("userWishlist"))
   };
 
 }
