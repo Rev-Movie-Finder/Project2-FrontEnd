@@ -5,7 +5,8 @@
     <div id="searchContainer" *ngFor="let movie of movies">
       <div id="addPadding" class="col-lg3-col-sm-4 my-5">
         <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
-          <img src="{{ imgUrl }}{{ movie.poster_path }}" alt="" />
+          <img *ngIf="!movie.poster_path" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
+          <img *ngIf="movie.poster_path" class="center" src="{{ imgUrl }}{{ movie.poster_path }}"/>
         </a>
         <p class="text-muted text-center mb-3" id="mTitle">{{ movie.title }}</p>
       </div>

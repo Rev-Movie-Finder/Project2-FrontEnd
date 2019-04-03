@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { MovieService } from "src/app/services/movie.service";
 import { StarModel } from 'src/app/models/starModel';
-import { StarMovieModel } from 'src/app/models/starMovieModel';
 
 @Component({
   selector: 'app-star',
@@ -15,15 +14,12 @@ export class StarComponent implements OnInit {
 
   ngOnInit() {
     this.getStar();
-    // this.getStarMovie();
-    // this.getStarShow();
+    this.getStarMovie();
   }
 
   imgUrl: string = "https://image.tmdb.org/t/p/original";
-
   stars: StarModel;
   starMovies: Object[] = [];
-  starShows: Object[] = [];
 
   getStar() {
     this.movieService
@@ -46,15 +42,5 @@ export class StarComponent implements OnInit {
   redirectUrl(id: string) {
     localStorage.setItem("movieId", id);
     this.route.navigateByUrl("movies/movie-detail");
-  }
-
-  getStarShow() {
-    this.movieService
-      .getStarShow()
-      .then(res => {
-        this.starShows = res.cast;
-      })
-      .catch(e => console.log(e));
-  }
-  
+  } 
 }

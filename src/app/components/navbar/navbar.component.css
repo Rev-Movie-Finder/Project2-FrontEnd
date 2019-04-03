@@ -1,6 +1,7 @@
 #searchbox {
   padding: 1.3rem;
   background: #ff424f;
+  width: 100%;
 }
 
 #sidebar {
@@ -8,6 +9,10 @@
   font-size: 20px;
   font-weight: bold;
   height: 100%;
+}
+
+form {
+  width: 100%;
 }
 
 .nav-link i {
@@ -28,4 +33,13 @@
 
 i {
   padding-left: 1.2rem;
+}
+
+li {
+  list-style: none;
+  min-height: 92px;
+}
+
+#add_padding {
+  margin-top: 30px;
 }

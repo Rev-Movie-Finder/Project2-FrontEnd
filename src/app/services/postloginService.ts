@@ -17,6 +17,9 @@ export class PostloginService {
   verifyUser (user2: user2): Observable<user3> { 
     return this.http.post<user3>(this.postUrl, user2 );
   }
+
+  
+
 }
   // getusers(): Promise<user3[]> {
   //   return this.http.get<user3[]>(`http://moviefinder.us-east-2.elasticbeanstalk.com/users`).toPromise();

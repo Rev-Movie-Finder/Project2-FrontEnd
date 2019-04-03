@@ -1,12 +1,19 @@
 <nav class="sidebar" id="sidebar">
   <form class="d-none d-md-inline-block form-inline">
-    <div id=searchbox>
-      <input class="form-control" type="text" placeholder="Search" aria-label="Search" (keydown.enter)="generateUrl()" [(ngModel)]="inputValue" name="input">
+    <div id="searchbox">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+        (keydown.enter)="generateUrl()"
+        [(ngModel)]="inputValue"
+        name="input"
+      />
     </div>
-    <code></code>
   </form>
 
-  <li class="nav-item">
+  <li id="add_padding" class="nav-item">
     <a class="nav-link" routerLink="movies/nowplaying">
       <i class="fas fa-film"></i>
       <span>Now playing</span>
@@ -31,9 +38,33 @@
     </a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" routerLink="profile">
+      <i class="fas fa-user"></i>
+      <span>Profile</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="favorite">
+      <i class="fas fa-heart"></i>
+      <span>Favorite</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="watchlist">
+      <i class="fas fa-th-list"></i>
+      <span>Watch list</span>
+    </a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" href="about">
       <i class="fas fa-info-circle"></i>
       <span>About</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="logout">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
     </a>
   </li>
 </nav>

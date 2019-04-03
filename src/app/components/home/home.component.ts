@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem("pageIndex", "1");
-    this.getPopular();
+    this.getNowPlaying();
   }
 
   minPage: number = 1;
@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
   movies: Object[] = [];
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
 
-  getPopular() {
-    this.movieService.getPopular()
+  getNowPlaying() {
+    this.movieService.getNowPlaying()
     .then((res)=>{
       const data = res;
       this.movies = data.results;
@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit {
   pageClick(button: string)
   {
     localStorage.setItem("pageIndex", button);
-    this.getPopular();
+    this.getNowPlaying();
+    window.scrollTo(0, 0);
   }
 }

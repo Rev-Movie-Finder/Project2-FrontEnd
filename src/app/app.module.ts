@@ -18,6 +18,9 @@ import { RegistrationComponentComponent } from './components/registration-compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     StarComponent,
     LoginComponentComponent,
     RegistrationComponentComponent,
-    ProfileComponent
+    ProfileComponent,
+    FavoriteComponent,
+    WatchlistComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MyMaterialModule,
+    MyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
