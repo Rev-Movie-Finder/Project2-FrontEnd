@@ -28,8 +28,22 @@
          </form>
       </mat-card-content>
       <mat-card-actions>
-         <button mat-raised-button (click)="add(username.value,password.value,email.value,date.value)" color="primary">Update</button>
+         <button mat-raised-button (click)="update(username.value,password.value,email.value,date.value)" color="primary">Update</button>
       </mat-card-actions>
+      <div class="row"  *ngIf="showMsg">
+         <div class="col-xs-8">
+            <p class="alert alert-success">
+                <strong>Registration Success!</strong> Please click login!.
+            </p>
+          </div>
+        </div>
+         <div class="row"  *ngIf="showMsg2">
+            <div class="col-xs-8">
+              <p class="alert alert-danger">
+                  <strong>Registration Failed!</strong> please try Again!.
+              </p>
+            </div>
+          </div>
    </mat-card>
    </div>
    </div>
