@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router:Router) { }
 
+  userId: number = Number.parseInt(localStorage.getItem("userId"));
   inputValue: string;
 
   ngOnInit() {
