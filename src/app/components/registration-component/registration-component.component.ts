@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostUserService } from 'src/app/services/postUserService';
+import { PostUserService } from 'src/app/services/postuserService';
 
 @Component({
   selector: 'app-registration-component',
@@ -27,8 +27,6 @@ export class RegistrationComponentComponent implements OnInit {
     let user = {username: username,password: password,email:email,birthday: sqldate}
    
     console.log(user);
-
-
 
     this.postuserService.addUser(user).subscribe((response) => {
       console.log('response from post is ', response);
