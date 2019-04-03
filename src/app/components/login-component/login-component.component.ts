@@ -21,7 +21,7 @@ export class LoginComponentComponent implements OnInit {
 
       if(response[0] != null){
         
-        window.location.href='profile';
+        window.location.href='movies/nowplaying';
         localStorage.setItem("userId", JSON.stringify(response[0].id));
         localStorage.setItem("username", JSON.stringify(response[0].username));
         localStorage.setItem("userEmail", JSON.stringify(response[0].email));
