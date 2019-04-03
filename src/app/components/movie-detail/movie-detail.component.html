@@ -6,8 +6,18 @@
       <div id="info_container">
         <h2>{{ movies.title }}</h2>
         <div>
-          <i class="fas fa-calendar-alt"></i>
-          <span>{{ movies.release_date | date: "MM/dd/yyyy" }}</span>
+          <div *ngFor="let date of dates">
+            <div *ngIf="date.iso_3166_1=='US'">
+              <div *ngFor="let d of date.release_dates">
+                <div *ngIf="!d.note">
+                  <div *ngIf="d.type == 3 || d.type == 4 || d.type == 2">
+                    <i class="fas fa-calendar-alt"></i>
+                    {{ d.release_date | date: "MM/dd/yyyy" }}
+                  </div>
+               </div>
+              </div>
+            </div>
+          </div>
           <i class="fas fa-stopwatch"></i>
           <span>{{ movies.runtime }}</span>
           <i class="fas fa-star"></i>
