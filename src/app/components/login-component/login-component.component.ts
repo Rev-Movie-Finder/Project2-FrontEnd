@@ -19,34 +19,6 @@ export class LoginComponentComponent implements OnInit {
       console.log("response from post is ", response);
       console.log(response);
 
-<<<<<<< Updated upstream
-      if (response[0] != null) {
-        window.location.href = "movies/nowplaying";
-
-        window.localStorage.setItem("id", JSON.stringify(response[0].id));
-        window.localStorage.setItem(
-          "username",
-          JSON.stringify(response[0].username)
-        );
-        window.localStorage.setItem("email", JSON.stringify(response[0].email));
-        window.localStorage.setItem(
-          "birthday",
-          JSON.stringify(response[0].birthday)
-        );
-        window.localStorage.setItem(
-          "favMovies",
-          JSON.stringify(response[0].favoriteMovies)
-        );
-        console.log(window.localStorage.getItem("favMovies"));
-        window.localStorage.setItem(
-          "wishlist",
-          JSON.stringify(response[0].wishList[0])
-        );
-        console.log(window.localStorage.getItem("wishlist"));
-        
-      } else {
-        this.showMsg = true;
-=======
       if(response[0] != null){
         
         window.location.href='profile';
@@ -60,7 +32,6 @@ export class LoginComponentComponent implements OnInit {
         console.log(window.localStorage.getItem("wishlist"));       
       }else{
         this.showMsg= true;
->>>>>>> Stashed changes
       }
     });
   }
