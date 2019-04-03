@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from "src/app/services/movie.service";
+import { FavoriteMovieModel, FavoriteMovy } from 'src/app/models/favoriteMovieModel';
 
 @Component({
   selector: 'app-watchlist',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WatchlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private movieService: MovieService
+  ) {} 
+
+  
 
   ngOnInit() {
+    this.getWatchList();
+  }
+
+  favMovies: FavoriteMovieModel;
+
+  getWatchList() {
+    this.movieService
+      .getFavoriteMovie()
+      .then(res => {
+        console.log(res);
+        this.favMovies = res;
+      })
+      .catch(e => console.log(e));
   }
 
 }
