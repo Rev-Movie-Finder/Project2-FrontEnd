@@ -5,6 +5,7 @@ import { MoviesDetail, Genre } from "src/app/models/movieDetail";
 import { DomSanitizer } from "@angular/platform-browser";
 import { toUnicode } from 'punycode';
 import { interceptingHandler } from '@angular/common/http/src/module';
+import { ReleaseDateModel } from 'src/app/models/releaseDateModel';
 
 @Component({
   selector: "app-movie-detail",
@@ -20,6 +21,7 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovieDetail();
+    this.getReleaseDate();
     this.getCast();
     this.getTrailer();
     this.currentlyOpen = 1;
@@ -35,6 +37,7 @@ export class MovieDetailComponent implements OnInit {
   imgUrl: string = "https://image.tmdb.org/t/p/original";
   key: string = "";
   movies: MoviesDetail;
+  dates: Object[] = [];
   genres: Genre[];
   casts: Object[] = [];
   trailers: Object[] = [];
@@ -78,6 +81,15 @@ export class MovieDetailComponent implements OnInit {
       .then(res => {
         this.movies = res;
         this.genres = res.genres;
+      })
+      .catch(e => console.log(e));
+  }
+
+  getReleaseDate() {
+    this.movieService
+      .getReleaseDate()
+      .then(res => {
+        this.dates = res.results;
       })
       .catch(e => console.log(e));
   }

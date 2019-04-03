@@ -6,6 +6,7 @@ import { SimilarMovies } from "../models/similarMovieModel";
 import { StarModel } from "../models/starModel";
 import { StarMovieModel } from "../models/starMovieModel";
 import { FavoriteMovieModel } from '../models/favoriteMovieModel';
+import { ReleaseDateModel } from '../models/releaseDateModel';
 
 @Injectable({
   providedIn: "root"
@@ -29,7 +30,7 @@ export class MovieService {
       .get<MoviesModel>(
         `${this.baseUrl}movie/now_playing?${
           this.apiKey
-        }&page=${localStorage.getItem("pageIndex")}`
+        }&page=${localStorage.getItem("pageIndex")}&region=US`
       )
       .toPromise();
   }
@@ -39,7 +40,7 @@ export class MovieService {
       .get<MoviesModel>(
         `${this.baseUrl}movie/upcoming?${
           this.apiKey
-        }&page=${localStorage.getItem("pageIndex")}`
+        }&page=${localStorage.getItem("pageIndex")}&region=US`
       )
       .toPromise();
   }
@@ -49,7 +50,7 @@ export class MovieService {
       .get<MoviesModel>(
         `${this.baseUrl}movie/popular?${
           this.apiKey
-        }&page=${localStorage.getItem("pageIndex")}`
+        }&page=${localStorage.getItem("pageIndex")}&region=US`
       )
       .toPromise();
   }
@@ -68,6 +69,14 @@ export class MovieService {
     return this.http
       .get<MoviesDetail>(
         `${this.baseUrl}movie/${localStorage.getItem("movieId")}?${this.apiKey}`
+      )
+      .toPromise();
+  }
+
+  getReleaseDate(): Promise<ReleaseDateModel> {
+    return this.http
+      .get<ReleaseDateModel>(
+        `${this.baseUrl}movie/${localStorage.getItem("movieId")}/release_dates?${this.apiKey}`
       )
       .toPromise();
   }
@@ -121,6 +130,14 @@ export class MovieService {
   }
 
   getFavoriteMovie(): Promise<FavoriteMovieModel> {
+    return this.http
+      .get<FavoriteMovieModel>(
+        `http://moviefinder.us-east-2.elasticbeanstalk.com/users`
+      )
+      .toPromise();
+  }
+
+  getWatchList(): Promise<FavoriteMovieModel> {
     return this.http
       .get<FavoriteMovieModel>(
         `http://moviefinder.us-east-2.elasticbeanstalk.com/users`

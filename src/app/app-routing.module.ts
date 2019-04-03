@@ -11,18 +11,22 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { RegistrationComponentComponent } from './components/registration-component/registration-component.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   {
     path:'profile',
     component: ProfileComponent,
-  },
-  {
+  }, {
     path:'register',
     component: RegistrationComponentComponent
   }, {
     path:'login',
     component: LoginComponentComponent
+  }, {
+    path:'logout',
+    component: LogoutComponent
   }, {
     path: 'search',
     component: SearchComponent,
@@ -47,6 +51,9 @@ const routes: Routes = [
   }, {
     path: 'favorite',
     component: FavoriteComponent
+  }, {
+    path: 'watchlist',
+    component: WatchlistComponent
   }, {
     path: '**',
     redirectTo: 'movies/nowplaying'

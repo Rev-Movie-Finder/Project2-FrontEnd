@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './material.module';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
     LoginComponentComponent,
     RegistrationComponentComponent,
     ProfileComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    WatchlistComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
