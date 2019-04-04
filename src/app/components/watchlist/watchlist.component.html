@@ -1,12 +1,8 @@
 <div id="home" class="container-fluid">
-  <h3 id="title" class="text-muted text-center mb-3">Watch list</h3>
+  <h3 id="title" class="text-muted text-center mb-3">Wish list</h3>
 
-  <div class="row" *ngFor="let favMovie of favMovies">
-    <div *ngIf="favMovie.id == userId">
-      <div *ngFor="let fMovie of favMovie.favoriteMovies">
-        {{ fMovie.id }}
-      </div>
-    </div>
+  <div class="row" *ngFor="let wishMovie of wishMovies">
+    {{ wishMovie.id }}
   </div>
 
   <br />
