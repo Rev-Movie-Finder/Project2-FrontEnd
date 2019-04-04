@@ -1,8 +1,8 @@
 <div id="main_container">
   <div id="top_container">
     <div id="img_container">
-      <img *ngIf="!movies.poster_path" class="center" src="https://s3.amazonaws.com/project2-dt/Filmography_NoPoster.jpg"/>
-      <img *ngIf="movies.poster_path" class="center" src="{{ imgUrl }}{{ movies.backdrop_path }}"/>
+      <img alt="no_poster_image" *ngIf="!movies.poster_path" class="center" src="https://s3.amazonaws.com/project2-dt/Filmography_NoPoster.jpg"/>
+      <img alt="poster_image" *ngIf="movies.poster_path" class="center" src="{{ imgUrl }}{{ movies.backdrop_path }}"/>
       <div id="info_container">
         <h2>{{ movies.title }}</h2>
         <div>
@@ -64,8 +64,8 @@
         <div id="addPadding" *ngIf="currentlyOpen == 1" class="col-lg3-col-sm-4 my-5">
           <div id="profile_container">
             <a (click)="redirectUrl(cast.id)" style="cursor: pointer">
-              <img *ngIf="!cast.profile_path" class="center" id="cast_img" src="https://s3.amazonaws.com/project2-dt/profile-jedi.png"/>
-              <img *ngIf="cast.profile_path" class="center" id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}"/>
+              <img alt="no_profile_image" *ngIf="!cast.profile_path" class="center" id="cast_img" src="https://s3.amazonaws.com/project2-dt/profile-jedi.png"/>
+              <img alt="profile_poster" *ngIf="cast.profile_path" class="center" id="cast_img" src="{{ imgUrl }}{{ cast.profile_path }}"/>
             </a>
             <div id="actor_name">
               <div>
@@ -88,8 +88,8 @@
         <div id="addPadding" *ngIf="currentlyOpen == 3" class="col-lg3-col-sm-4 my-5">
           <div id="similar_movie_container">
             <a (click)="redirectUrl2(simMovie.id)" style="cursor: pointer">
-              <img *ngIf="!simMovie.poster_path" id="simliar_movie_img" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
-              <img *ngIf="simMovie.poster_path" id="simliar_movie_img" class="center" src="{{ imgUrl }}{{ simMovie.poster_path }}"/>
+              <img alt="no_poster_image" *ngIf="!simMovie.poster_path" id="simliar_movie_img" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
+              <img alt="poster_image" *ngIf="simMovie.poster_path" id="simliar_movie_img" class="center" src="{{ imgUrl }}{{ simMovie.poster_path }}"/>
             </a>
             <br />
             <div class="text-center" id="mTitle">
