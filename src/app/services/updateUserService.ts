@@ -7,7 +7,7 @@ import {user} from '../user';
   providedIn: 'root'
 })
 export class UpdateUserService {
-    postUrl: string = "http://moviefinder.us-east-2.elasticbeanstalk.com/users/";
+    postUrl: string = "http://movie-finder5.us-east-1.elasticbeanstalk.com/users";
 
   constructor(private http: HttpClient) { }
 
