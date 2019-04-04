@@ -21,15 +21,13 @@ export class LoginComponentComponent implements OnInit {
 
       if(response[0] != null){
         
-        window.location.href='profile';
+        window.location.href='movies/nowplaying';
         localStorage.setItem("userId", JSON.stringify(response[0].id));
         localStorage.setItem("username", JSON.stringify(response[0].username));
         localStorage.setItem("userEmail", JSON.stringify(response[0].email));
         localStorage.setItem("userBirthday", JSON.stringify(response[0].birthday));
         localStorage.setItem("userFavMovies", JSON.stringify(response[0].favoriteMovies[0].id ));
-        console.log(window.localStorage.getItem("favMovies"));  
-        localStorage.setItem("userWishlist", JSON.stringify(response[0].wishList[0]));
-        console.log(window.localStorage.getItem("wishlist"));       
+        //localStorage.setItem("userWishlist", JSON.stringify(response[0].wishList[0]));
       }else{
         this.showMsg= true;
       }
