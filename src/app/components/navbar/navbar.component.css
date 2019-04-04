@@ -15,10 +15,6 @@ form {
   width: 100%;
 }
 
-.nav-link i {
-  margin-right: 10px;
-}
-
 @media (min-width: 768px) {
   .sidebar {
     width: 100% !important;
@@ -31,13 +27,8 @@ form {
   }
 }
 
-i {
+span {
   padding-left: 1.2rem;
-}
-
-li {
-  list-style: none;
-  min-height: 92px;
 }
 
 #add_padding {

@@ -11,16 +11,16 @@
               <div *ngFor="let d of date.release_dates">
                 <div *ngIf="!d.note">
                   <div *ngIf="d.type == 3 || d.type == 4 || d.type == 2">
-                    <i class="fas fa-calendar-alt"></i>
+                    <span class="fas fa-calendar-alt"></span>
                     {{ d.release_date | date: "MM/dd/yyyy" }}
                   </div>
                </div>
               </div>
             </div>
           </div>
-          <i class="fas fa-stopwatch"></i>
+          <span class="fas fa-stopwatch"></span>
           <span>{{ movies.runtime }}</span>
-          <i class="fas fa-star"></i>
+          <span class="fas fa-star"></span>
           <span>{{ movies.vote_average }}</span>
         </div>
         <div class="row">
