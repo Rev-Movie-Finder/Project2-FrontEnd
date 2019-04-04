@@ -6,6 +6,10 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { toUnicode } from 'punycode';
 import { interceptingHandler } from '@angular/common/http/src/module';
 import { ReleaseDateModel } from 'src/app/models/releaseDateModel';
+import { AddMovieService } from 'src/app/services/addMovieService';
+import { user4 } from 'src/app/user4';
+
+
 
 @Component({
   selector: "app-movie-detail",
@@ -14,6 +18,7 @@ import { ReleaseDateModel } from 'src/app/models/releaseDateModel';
 })
 export class MovieDetailComponent implements OnInit {
   constructor(
+    private addMovieService: AddMovieService,
     private sanitizer: DomSanitizer,
     private movieService: MovieService,
     private route: Router
@@ -43,8 +48,13 @@ export class MovieDetailComponent implements OnInit {
   trailers: Object[] = [];
   similarMovies: Object[] = [];
 
-  favoriteClicked()
-  {
+  showMsg: boolean = false;
+  showMsg2: boolean = false;
+  userId: number = parseInt(localStorage.getItem("userId"));
+
+  favoriteClicked(): void {
+    console.log(this.userId);
+    console.log(localStorage.getItem("movieId"))
     if(this.isFavorite)
     {
       this.favoriteStyle = "btn btn-danger";
@@ -56,9 +66,26 @@ export class MovieDetailComponent implements OnInit {
       this.favoriteStyle = "btn btn-outline-danger";
       this.isFavorite = true;
       this.favoriteBtnText = "Added to Favorites " + String.fromCharCode(10003);
-    }
-  }
+    } 
 
+    let user4= {id: (parseInt(localStorage.getItem("movieId")))}
+ 
+    this.addMovieService.updateUser(user4, this.userId).subscribe((response) => {
+      console.log('response from post is ', response);
+      if (response == true){
+      this.showMsg= true;
+      this.showMsg2= false;
+      }
+      else{
+        this.showMsg2= true;
+        this.showMsg= false;
+
+      }
+    }
+    );
+
+  } 
+ 
   watchClicked()
   {
     if(this.isWatch)
@@ -73,6 +100,22 @@ export class MovieDetailComponent implements OnInit {
       this.isWatch = true;
       this.watchBtnText = "Added to Watchlist " + String.fromCharCode(10003);
     }
+
+    let user4= {id: (parseInt(localStorage.getItem("movieId")))}
+ 
+    this.addMovieService.addToWishList(user4, this.userId).subscribe((response) => {
+      console.log('response from post is ', response);
+      if (response == true){
+      this.showMsg= true;
+      this.showMsg2= false;
+      }
+      else{
+        this.showMsg2= true;
+        this.showMsg= false;
+
+      }
+    }
+    );
   }
 
   getMovieDetail() {
