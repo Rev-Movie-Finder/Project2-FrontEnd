@@ -6,19 +6,15 @@ h3 {
   padding-top: 30px;
 }
 
-#addPadding {
+#trendingPadding {
   padding-left: 6rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-#mTitle {
+#trendingmTitle {
   font-size: 26px;
   max-width: 300px;
-}
-
-#release_date {
-  font-size: 20px;
 }
 
 img {

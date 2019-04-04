@@ -48,72 +48,48 @@ export class MovieDetailComponent implements OnInit {
   trailers: Object[] = [];
   similarMovies: Object[] = [];
 
-  showMsg: boolean = false;
-  showMsg2: boolean = false;
+
   userId: number = parseInt(localStorage.getItem("userId"));
 
   favoriteClicked(): void {
-    console.log(this.userId);
-    console.log(localStorage.getItem("movieId"))
-    if(this.isFavorite)
-    {
-      this.favoriteStyle = "btn btn-danger";
-      this.isFavorite = false;
-      this.favoriteBtnText = "Favorite";
-    }
-    else
-    {
-      this.favoriteStyle = "btn btn-outline-danger";
-      this.isFavorite = true;
-      this.favoriteBtnText = "Added to Favorites " + String.fromCharCode(10003);
-    } 
+
 
     let user4= {id: (parseInt(localStorage.getItem("movieId")))}
  
     this.addMovieService.updateUser(user4, this.userId).subscribe((response) => {
       console.log('response from post is ', response);
       if (response == true){
-      this.showMsg= true;
-      this.showMsg2= false;
+        this.favoriteStyle = "btn btn-outline-danger";
+        this.isFavorite = false;
+        this.favoriteBtnText = "Added to Favorites " + String.fromCharCode(10003);
+
+    
       }
       else{
-        this.showMsg2= true;
-        this.showMsg= false;
-
+        this.favoriteStyle = "btn btn-outline-danger";
+        this.isFavorite = true;
+        this.favoriteBtnText = "Movie Already Added " + String.fromCharCode(10003);
       }
-    }
-    );
+    });
 
   } 
- 
+
   watchClicked()
   {
-    if(this.isWatch)
-    {
-      this.watchStyle = "btn btn-primary";
-      this.isWatch = false;
-      this.watchBtnText = "Watchlist";
-    }
-    else
-    {
-      this.watchStyle = "btn btn-outline-primary";
-      this.isWatch = true;
-      this.watchBtnText = "Added to Watchlist " + String.fromCharCode(10003);
-    }
-
+ 
     let user4= {id: (parseInt(localStorage.getItem("movieId")))}
  
     this.addMovieService.addToWishList(user4, this.userId).subscribe((response) => {
       console.log('response from post is ', response);
       if (response == true){
-      this.showMsg= true;
-      this.showMsg2= false;
+        this.watchStyle = "btn btn-outline-primary";
+        this.isFavorite = false;
+        this.watchBtnText = "Added to Watchlist " + String.fromCharCode(10003);
       }
       else{
-        this.showMsg2= true;
-        this.showMsg= false;
-
-      }
+        this.watchStyle = "btn btn-outline-primary";
+        this.isFavorite = false;
+        this.watchBtnText = "Movie Already Added " + String.fromCharCode(10003);      }
     }
     );
   }
