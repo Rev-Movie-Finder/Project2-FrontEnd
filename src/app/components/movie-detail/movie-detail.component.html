@@ -33,6 +33,20 @@
           <button [ngClass]="favoriteStyle" (click)="favoriteClicked()">{{favoriteBtnText}}</button>
           <button [ngClass]="watchStyle" id="watchlist" (click)="watchClicked()">{{watchBtnText}}</button>
         </div>
+        <div class="row"  *ngIf="showMsg">
+          <div class="col-xs-8">
+             <p class="alert alert-success">
+                 <strong>Added To List</strong> 
+             </p>
+           </div>
+         </div>
+          <div class="row"  *ngIf="showMsg2">
+             <div class="col-xs-8">
+               <p class="alert alert-danger">
+                   <strong>Failed To Add!</strong>
+               </p>
+             </div>
+           </div>
       </div>
     </div>
   </div>

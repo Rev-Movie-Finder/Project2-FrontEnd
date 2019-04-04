@@ -26,7 +26,7 @@ export class LoginComponentComponent implements OnInit {
         localStorage.setItem("username", JSON.stringify(response[0].username));
         localStorage.setItem("userEmail", JSON.stringify(response[0].email));
         localStorage.setItem("userBirthday", JSON.stringify(response[0].birthday));
-        localStorage.setItem("userFavMovies", JSON.stringify(response[0].favoriteMovies[0].id ));
+        localStorage.setItem("userFavMovies", JSON.stringify(response[0].favoriteMovies[0] ));
         //localStorage.setItem("userWishlist", JSON.stringify(response[0].wishList[0]));
       }else{
         this.showMsg= true;

@@ -8,7 +8,7 @@ import { user3 } from '../user3';
   providedIn: 'root'
 })
 export class PostloginService {
-  postUrl: string= "http://moviefinder.us-east-2.elasticbeanstalk.com/users/login";
+  postUrl: string= "http://movie-finder5.us-east-1.elasticbeanstalk.com/users/login";
 
 
   constructor(private http: HttpClient) { }
