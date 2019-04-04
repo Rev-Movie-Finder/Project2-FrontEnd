@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from "src/app/services/movie.service";
-import { FavoriteMovieModel, FavoriteMovy } from 'src/app/models/favoriteMovieModel';
+import { FavoriteMovieModel } from 'src/app/models/favoriteMovieModel';
 
 @Component({
   selector: 'app-watchlist',
@@ -20,10 +20,12 @@ export class WatchlistComponent implements OnInit {
   }
 
   favMovies: FavoriteMovieModel;
+  userId: number = parseInt(localStorage.getItem("userId"));
+  
 
   getWatchList() {
     this.movieService
-      .getFavoriteMovie()
+      .getWatchList()
       .then(res => {
         console.log(res);
         this.favMovies = res;
