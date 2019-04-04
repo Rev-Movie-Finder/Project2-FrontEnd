@@ -51,7 +51,6 @@ export class MovieDetailComponent implements OnInit {
 
   showMsg: boolean = false;
   showMsg2: boolean = false;
-  userId: number = parseInt(localStorage.getItem("userId"));
 
   favoriteClicked(): void {
     console.log(this.userId);
