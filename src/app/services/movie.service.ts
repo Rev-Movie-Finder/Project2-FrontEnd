@@ -132,7 +132,7 @@ export class MovieService {
   getFavoriteMovie(): Promise<FavoriteMovieModel> {
     return this.http
       .get<FavoriteMovieModel>(
-        `http://moviefinder.us-east-2.elasticbeanstalk.com/users`
+        `http://movie-finder5.us-east-1.elasticbeanstalk.com/users`
       )
       .toPromise();
   }
@@ -140,7 +140,15 @@ export class MovieService {
   getWatchList(): Promise<FavoriteMovieModel> {
     return this.http
       .get<FavoriteMovieModel>(
-        `http://moviefinder.us-east-2.elasticbeanstalk.com/users`
+        `http://movie-finder5.us-east-1.elasticbeanstalk.com/users`
+      )
+      .toPromise();
+  }
+
+  getMyMovie(): Promise<MoviesModel> {
+    return this.http
+      .get<MoviesModel>(
+        `${this.baseUrl}movie/${localStorage.getItem("movieId")}?${this.apiKey}`
       )
       .toPromise();
   }
