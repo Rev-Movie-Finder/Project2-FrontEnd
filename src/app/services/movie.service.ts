@@ -14,6 +14,7 @@ import { ReleaseDateModel } from '../models/releaseDateModel';
 export class MovieService {
   private baseUrl: string = "https://api.themoviedb.org/3/";
   private apiKey: string = "api_key=5d0c0be0b57a0b544ed4f305ebcdfee8";
+  userId: number = parseInt(localStorage.getItem("userId"));
 
   constructor(private http: HttpClient) {}
 
@@ -132,7 +133,7 @@ export class MovieService {
   getFavoriteMovie(): Promise<FavoriteMovieModel> {
     return this.http
       .get<FavoriteMovieModel>(
-        `http://movie-finder5.us-east-1.elasticbeanstalk.com/users`
+        `http://movie-finder5.us-east-1.elasticbeanstalk.com/users/` + this.userId
       )
       .toPromise();
   }
@@ -140,7 +141,7 @@ export class MovieService {
   getWatchList(): Promise<FavoriteMovieModel> {
     return this.http
       .get<FavoriteMovieModel>(
-        `http://movie-finder5.us-east-1.elasticbeanstalk.com/users`
+        `http://movie-finder5.us-east-1.elasticbeanstalk.com/users/` + this.userId
       )
       .toPromise();
   }
