@@ -2,8 +2,10 @@
   <h3 id="title" class="text-muted text-center mb-3">Favorite movies</h3>
 
   <div class="row" *ngFor="let favMovie of favMovies">
-    <div *ngFor="let fMovie of favMovie.favoriteMovies">
-      {{ fMovie.id }}
+    <div *ngIf="favMovie.id == userId">
+      <div *ngFor="let fMovie of favMovie.favoriteMovies">
+        {{ fMovie.id }}
+      </div>
     </div>
   </div>
 

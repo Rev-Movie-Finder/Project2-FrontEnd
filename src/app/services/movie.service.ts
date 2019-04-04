@@ -145,4 +145,12 @@ export class MovieService {
       .toPromise();
   }
 
+  getMyMovie(): Promise<MoviesModel> {
+    return this.http
+      .get<MoviesModel>(
+        `${this.baseUrl}movie/${localStorage.getItem("movieId")}?${this.apiKey}`
+      )
+      .toPromise();
+  }
+
 }

@@ -18,6 +18,7 @@ export class FavoriteComponent implements OnInit {
   }
 
   favMovies: FavoriteMovieModel;
+  userId: number = parseInt(localStorage.getItem("userId"));
 
   getFavoriteMovie() {
     this.movieService
@@ -28,5 +29,16 @@ export class FavoriteComponent implements OnInit {
       })
       .catch(e => console.log(e));
   }
+
+  getMyMovie() {
+    this.movieService
+      .getFavoriteMovie()
+      .then(res => {
+        console.log(res);
+        this.favMovies = res;
+      })
+      .catch(e => console.log(e));
+  }
+  
 
 }
