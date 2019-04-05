@@ -30,7 +30,6 @@ export class SearchComponent implements OnInit {
     this.movieservice.getMovieSearch()
     .then((res)=>{
       const data = res;
-      console.log(data.results);
       this.movies = data.results;
       this.maxPage = data.total_pages;
       this.createButtons();
@@ -52,7 +51,6 @@ export class SearchComponent implements OnInit {
 
   createButtons()
   {
-    console.log("This is called");
     this.buttons = [];
     for(let i = this.minPage; i < this.minPage + 10; ++i)
     {
