@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
     username: JSON.parse(localStorage.getItem("username")),
     password: "",
     birthday: JSON.parse(localStorage.getItem("userBirthday")),
-    favoriteMovies: JSON.parse(localStorage.getItem("userFavMovies")),
+    favoriteMovies:[{id:0}],
     wishList: []
   };
 
