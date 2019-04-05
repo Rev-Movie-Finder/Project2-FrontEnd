@@ -30,7 +30,6 @@ export class ProfileComponent implements OnInit {
     this.movieService
       .getFavoriteMovie()
       .then(res => {
-        console.log(res);
         this.user = res;
       })
       .catch(e => console.log(e));
@@ -66,10 +65,7 @@ export class ProfileComponent implements OnInit {
       birthday: sqldate
     };
 
-    console.log(user);
-
     this.updateUserService.updateUser(user, user.id).subscribe(response => {
-      console.log("response from post is ", response);
       if (response == true) {
         this.showMsg = true;
         this.showMsg2 = false;

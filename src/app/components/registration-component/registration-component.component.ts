@@ -25,11 +25,9 @@ export class RegistrationComponentComponent implements OnInit {
     sqldate += "-"+ ((String)(momentDate.getMonth()));
     sqldate += "-"+ ((String)(momentDate.getDay()));
     let user = {username: username,password: password,email:email,birthday: sqldate}
-   
-    console.log(user);
 
     this.postuserService.addUser(user).subscribe((response) => {
-      console.log('response from post is ', response);
+
       if (response == true){
       this.showMsg= true;
       this.showMsg2= false;

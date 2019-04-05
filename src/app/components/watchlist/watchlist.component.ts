@@ -57,6 +57,7 @@ export class WatchlistComponent implements OnInit {
   getWishMovie() {
     this.movieService
       .getWishMovie()
+
       .then(res => {
         this.wishMoviesIds = res.wishList;
       })

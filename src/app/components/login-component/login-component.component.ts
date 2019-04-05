@@ -16,8 +16,6 @@ export class LoginComponentComponent implements OnInit {
     let user2 = { username: uname, password: pass };
 
     this.postloginService.verifyUser(user2).subscribe(response => {
-      console.log("response from post is ", response);
-      console.log(response);
 
       if(response[0] != null){
         
