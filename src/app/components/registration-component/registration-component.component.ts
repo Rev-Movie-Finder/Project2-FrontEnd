@@ -28,7 +28,7 @@ export class RegistrationComponentComponent implements OnInit {
 
     this.postuserService.addUser(user).subscribe((response) => {
 
-      if (response == true){
+      if (response){
       this.showMsg= true;
       this.showMsg2= false;
       }

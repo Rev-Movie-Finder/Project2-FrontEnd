@@ -19,7 +19,7 @@ interface wishMovieInfo
 export class WatchlistComponent implements OnInit {
   constructor(private movieService: MovieService, private route: Router) {}
   ngOnInit() {
-    this.getWishMovie()
+    this.getFavoriteMovie()
   }
 
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
@@ -29,7 +29,6 @@ export class WatchlistComponent implements OnInit {
   
   buildMovieArray()
   {
-    console.log(this.wishMoviesIds);
 
     for(let i = 0; i < this.wishMoviesIds.length; ++i)
     {
@@ -54,9 +53,9 @@ export class WatchlistComponent implements OnInit {
     this.route.navigateByUrl("movies/movie-detail");
   }
 
-  getWishMovie() {
+  getFavoriteMovie() {
     this.movieService
-      .getWishMovie()
+      .getFavoriteMovie()
 
       .then(res => {
         this.wishMoviesIds = res.wishList;

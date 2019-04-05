@@ -3,12 +3,7 @@ import { Router } from "@angular/router";
 import { MovieService } from "src/app/services/movie.service";
 import { MoviesDetail, Genre } from "src/app/models/movieDetail";
 import { DomSanitizer } from "@angular/platform-browser";
-import { toUnicode } from 'punycode';
-import { interceptingHandler } from '@angular/common/http/src/module';
-import { ReleaseDateModel } from 'src/app/models/releaseDateModel';
 import { AddMovieService } from 'src/app/services/addMovieService';
-import { user4 } from 'src/app/user4';
-
 
 
 @Component({
@@ -56,8 +51,7 @@ export class MovieDetailComponent implements OnInit {
     let user4= {id: (parseInt(localStorage.getItem("movieId")))}
  
     this.addMovieService.updateUser(user4, this.userId).subscribe((response) => {
-      console.log('response from post is ', response);
-      if (response == true){
+      if (response){
         this.favoriteStyle = "btn btn-outline-danger";
         this.isFavorite = false;
         this.favoriteBtnText = "Added to Favorites " + String.fromCharCode(10003);
@@ -75,12 +69,10 @@ export class MovieDetailComponent implements OnInit {
 
   watchClicked()
   {
- 
     let user4= {id: (parseInt(localStorage.getItem("movieId")))}
  
     this.addMovieService.addToWishList(user4, this.userId).subscribe((response) => {
-      console.log('response from post is ', response);
-      if (response == true){
+      if (response){
         this.watchStyle = "btn btn-outline-primary";
         this.isFavorite = false;
         this.watchBtnText = "Added to Watchlist " + String.fromCharCode(10003);

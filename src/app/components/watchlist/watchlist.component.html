@@ -5,8 +5,8 @@
     <div class="nowPlayingContainer" *ngFor="let movie of wishMovies">
       <div id="addPadding" class="col-lg3-col-sm-4 my-5">
         <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
-          <img *ngIf="!movie.imgPath" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
-          <img *ngIf="movie.imgPath" class="center" src="{{ imgUrl }}{{ movie.imgPath }}"/>
+          <img alt="no_movie_poster" *ngIf="!movie.imgPath" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
+          <img alt="movie_poster" *ngIf="movie.imgPath" class="center" src="{{ imgUrl }}{{ movie.imgPath }}"/>
         </a>
         <p class="text-muted text-center mb-3" id="mTitle">
           {{ movie.title }}

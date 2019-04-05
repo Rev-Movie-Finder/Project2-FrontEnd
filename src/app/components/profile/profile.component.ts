@@ -66,7 +66,7 @@ export class ProfileComponent implements OnInit {
     };
 
     this.updateUserService.updateUser(user, user.id).subscribe(response => {
-      if (response == true) {
+      if (response) {
         this.showMsg = true;
         this.showMsg2 = false;
         window.location.reload();

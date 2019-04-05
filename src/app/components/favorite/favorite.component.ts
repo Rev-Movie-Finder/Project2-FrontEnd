@@ -32,7 +32,6 @@ export class FavoriteComponent implements OnInit {
   
   buildMovieArray()
   {
-    console.log(this.favMoviesIds);
 
     for(let i = 0; i < this.favMoviesIds.length; ++i)
     {
