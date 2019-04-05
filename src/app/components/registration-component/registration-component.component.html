@@ -1,6 +1,6 @@
 <div id="register">
    <div class="container">
-         <mat-toolbar>
+         <mat-toolbar id="cont">
      <span>Registration</span>
    </mat-toolbar>
    <mat-card class="my-card">
@@ -28,8 +28,8 @@
          </form>
       </mat-card-content>
       <mat-card-actions>
-         <button mat-raised-button (click)="add(username.value,password.value,email.value,date.value)" color="primary">REGISTER</button>       
-         <button mat-raised-button routerLink="../login"  color="primary">LOGIN</button>
+         <button class="btn btn-secondary" mat-raised-button (click)="add(username.value,password.value,email.value,date.value)" color="btn-secondary">REGISTER</button>       
+         <button class="btn btn-secondary" mat-raised-button routerLink="../login"  color="btn-secondary">LOGIN</button>
       </mat-card-actions>
       <div class="row"  *ngIf="showMsg">
       <div class="col-xs-8">
