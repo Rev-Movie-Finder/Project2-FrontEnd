@@ -48,7 +48,6 @@ export class MovieDetailComponent implements OnInit {
   casts: Object[] = [];
   trailers: Object[] = [];
   similarMovies: Object[] = [];
-  userId: number = parseInt(localStorage.getItem("userId"));
 
 
   favoriteClicked(): void {
