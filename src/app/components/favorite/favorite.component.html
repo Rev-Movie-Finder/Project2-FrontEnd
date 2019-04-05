@@ -1,16 +1,18 @@
 <div id="home" class="container-fluid">
   <h3 id="title" class="text-muted text-center mb-3">Favorite movies</h3>
 
-  <div class="row" *ngFor="let movie of favMovies">
+  <div class="row">
+    <div id="nowPlayingContainer" *ngFor="let movie of favMovies">
       <div id="addPadding" class="col-lg3-col-sm-4 my-5">
         <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
           <img alt="no_movie_poster" *ngIf="!movie.imgPath" class="center" src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"/>
           <img alt="movie_poster" *ngIf="movie.imgPath" class="center" src="{{ imgUrl }}{{ movie.imgPath }}"/>
         </a>
+        <p class="text-muted text-center mb-3" id="mTitle">
+          {{ movie.title }}
+        </p>
       </div>
-    <p class="text-muted text-center mb-3" id="mTitle">
-      {{ movie.title }}
-    </p>
+    </div>
   </div>
 
   <br />
