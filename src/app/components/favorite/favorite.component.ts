@@ -28,21 +28,27 @@ export class FavoriteComponent implements OnInit {
   imgUrl: string = "http://image.tmdb.org/t/p/w300";
   favMoviesIds: FavoriteMovy[];
   favMovies: FavMovieInfo[] = [];
-  temp: FavMovieInfo = {id: 0, imgPath: "", title: ""};
   movieDeet: MoviesDetail;
   
   buildMovieArray()
   {
+    console.log(this.favMoviesIds);
+
     for(let i = 0; i < this.favMoviesIds.length; ++i)
     {
       localStorage.setItem("movieId", ""+this.favMoviesIds[i].id);
+
       this.movieService.getMovieDetail().then(res => {
-        this.temp.id = res.id;
-        this.temp.imgPath = res.poster_path;
-        this.temp.title = res.title;
-        console.log(this.temp);
-        this.favMovies.push(this.temp);
+        let tempy:FavMovieInfo ={
+          id: res.id,
+          imgPath: res.poster_path,
+          title: res.title
+        }; 
+        
+        this.favMovies.push(tempy);
+        
       }).catch(e => console.log(e));
+     
     }
   }
 

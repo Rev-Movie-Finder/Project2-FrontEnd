@@ -137,6 +137,13 @@ export class MovieService {
       )
       .toPromise();
   }
+  getWishMovie(): Promise<FavoriteMovieModel> {
+    return this.http
+      .get<FavoriteMovieModel>(
+        `http://movie-finder5.us-east-1.elasticbeanstalk.com/users/${this.userId}`
+      )
+      .toPromise();
+  }
 
   getWatchList(): Promise<FavoriteMovieModel> {
     return this.http
