@@ -1,5 +1,6 @@
+
 <div id="back">
-  <div class="jumbotron">
+  <div id="cont" class="jumbotron">
     <div class="row">
       <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
         <img
@@ -9,8 +10,8 @@
         />
       </div>
       <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
-        <div class="container" style="border-bottom:1px solid black">
-          <h2>HELLO, {{ user.username }}</h2>
+        <div class="container" style="border-bottom:1px solid beige">
+          <h2>Hello {{ user.username }},</h2>
         </div>
         <hr />
         <ul class="container details">
@@ -29,7 +30,7 @@
                 class="glyphicon glyphicon-new-window one"
                 style="width:50px;"
               ></span
-              ><a href="#">Email: {{ user.email }}</a>
+              ><a >Email: {{ user.email }}</a>
             </p>
           </li>
         </ul>
@@ -39,10 +40,10 @@
 </div>
 <div id="register">
   <div class="container">
-    <mat-toolbar>
+    <mat-toolbar id="cont" >
       <span>Update user</span>
     </mat-toolbar>
-    <mat-card class="my-card">
+    <mat-card class="my-card" id="cont2">
       <mat-card-content>
         <form class="my-form">
           <mat-form-field class="full-width">
@@ -97,12 +98,12 @@
         </form>
       </mat-card-content>
       <mat-card-actions>
-        <button
+        <button class="btn btn-secondary"
           mat-raised-button
           (click)="
             update(username.value, password.value, email.value, date.value)
           "
-          color="primary"
+          color="secondary"
         >
           Update
         </button>

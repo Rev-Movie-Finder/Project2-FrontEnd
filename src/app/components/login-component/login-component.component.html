@@ -1,6 +1,6 @@
 <div id="login">
    <div class="container">
-         <mat-toolbar>
+         <mat-toolbar id="cont" >
      <span>Login</span>
    </mat-toolbar>
    <mat-card class="my-card">
@@ -18,8 +18,8 @@
          </form>
       </mat-card-content>
       <mat-card-actions>
-         <button mat-raised-button type="submit" (click)="tryLogin(username.value,password.value)" color="primary">LOGIN</button>
-         <button mat-raised-button routerLink="../register"  color="primary">REGISTER</button>
+         <button class="btn btn-secondary" mat-raised-button type="submit" (click)="tryLogin(username.value,password.value)" color="btn-secondary">LOGIN</button>
+         <button class="btn btn-secondary" mat-raised-button routerLink="../register"  color="btn-secondary">REGISTER</button>
       </mat-card-actions>
       <div class="row"  *ngIf="showMsg">
          <div class="col-xs-8">
