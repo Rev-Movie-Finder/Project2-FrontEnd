@@ -1,7 +1,5 @@
 #home {
-  background-color: rgba(0, 0, 0, 0.87);
-  color: white;
-  height: 100vh;
+  background-color: rgba(0,0,0,.87);
 }
 
 h3 {
@@ -28,4 +26,8 @@ img {
   max-width: 300px;
   min-height: 450px;
   max-height: 450px;
+}
+
+#pagination_container {
+  text-align: center;
 }

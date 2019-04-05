@@ -32,6 +32,7 @@ export class MovieDetailComponent implements OnInit {
     this.currentlyOpen = 1;
   }
 
+  userId: number = Number.parseInt(localStorage.getItem("userId"));
   watchStyle: string = "btn btn-primary";
   isWatch: boolean = false;
   watchBtnText: string = "Watchlist";
@@ -47,9 +48,8 @@ export class MovieDetailComponent implements OnInit {
   casts: Object[] = [];
   trailers: Object[] = [];
   similarMovies: Object[] = [];
-
-
   userId: number = parseInt(localStorage.getItem("userId"));
+
 
   favoriteClicked(): void {
 
