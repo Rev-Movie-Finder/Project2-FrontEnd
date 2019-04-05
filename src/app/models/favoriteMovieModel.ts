@@ -1,6 +1,9 @@
 export interface FavoriteMovy {
   id: number;
 }
+export interface wishMovy {
+  id: number;
+}
 
 export interface FavoriteMovieModel {
   id: number;
@@ -9,5 +12,5 @@ export interface FavoriteMovieModel {
   password: string;
   birthday?: any;
   favoriteMovies: FavoriteMovy[];
-  wishList: any[];
+  wishList: wishMovy[];
 }
