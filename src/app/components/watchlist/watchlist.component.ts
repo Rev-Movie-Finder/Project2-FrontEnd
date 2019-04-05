@@ -10,14 +10,14 @@ export class WatchlistComponent implements OnInit {
   constructor(private movieService: MovieService) {}
 
   ngOnInit() {
-    this.getWatchList();
+    this.getFavoriteMovie();
   }
 
   wishMovies: object[];
 
-  getWatchList() {
+  getFavoriteMovie() {
     this.movieService
-      .getWatchList()
+      .getFavoriteMovie()
       .then(res => {
         console.log(res);
         this.wishMovies = res.wishList;

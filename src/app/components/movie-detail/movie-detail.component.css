@@ -89,12 +89,6 @@ a:active {
   padding-right: 3rem;
 }
 
-#more_info {
-  padding-top: 2rem;
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;
-}
 
 #actor_name {
   font-size: 20px;
@@ -129,6 +123,10 @@ iframe {
 #more_info {
   background-color: rgba(0, 0, 0, 0.87);
   padding-bottom: 1rem;
+  padding-top: 2rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 #more_info div {
