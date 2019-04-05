@@ -13,58 +13,58 @@
     </div>
   </form>
 
-  <li id="add_padding" class="nav-item">
+  <ul id="add_padding" class="nav-item">
     <a class="nav-link" routerLink="movies/nowplaying">
-      <i class="fas fa-film"></i>
+      <span class="fas fa-film"></span>
       <span>Now playing</span>
     </a>
-  </li>
-  <li class="nav-item">
+  </ul>
+  <ul class="nav-item">
     <a class="nav-link" routerLink="movies/upcoming">
-      <i class="far fa-calendar-alt"></i>
+      <span class="far fa-calendar-alt"></span>
       <span>Coming soon</span>
     </a>
-  </li>
-  <li class="nav-item">
+  </ul>
+  <ul class="nav-item">
     <a class="nav-link" routerLink="movies/trending">
-      <i class="fas fa-fire-alt"></i>
+      <span class="fas fa-fire-alt"></span>
       <span>Trending</span>
     </a>
-  </li>
-  <li class="nav-item" *ngIf="!userId">
+  </ul>
+  <ul class="nav-item" *ngIf="!userId">
     <a class="nav-link" routerLink="login">
-      <i class="fas fa-user"></i>
+      <span class="fas fa-user"></span>
       <span>Sign in</span>
     </a>
-  </li>
-  <li class="nav-item" *ngIf="userId">
+  </ul>
+  <ul class="nav-item" *ngIf="userId">
     <a class="nav-link" routerLink="profile">
-      <i class="fas fa-user"></i>
+      <span class="fas fa-user"></span>
       <span>Profile</span>
     </a>
-  </li>
-  <li class="nav-item" *ngIf="userId">
+  </ul>
+  <ul class="nav-item" *ngIf="userId">
     <a class="nav-link" routerLink="favorite">
-      <i class="fas fa-heart"></i>
+      <span class="fas fa-heart"></span>
       <span>Favorite</span>
     </a>
-  </li>
-  <li class="nav-item" *ngIf="userId">
+  </ul>
+  <ul class="nav-item" *ngIf="userId">
     <a class="nav-link" routerLink="watchlist">
-      <i class="fas fa-th-list"></i>
+      <span class="fas fa-th-list"></span>
       <span>Watch list</span>
     </a>
-  </li>
-  <li class="nav-item">
+  </ul>
+  <ul class="nav-item">
     <a class="nav-link" href="about">
-      <i class="fas fa-info-circle"></i>
+      <span class="fas fa-info-circle"></span>
       <span>About</span>
     </a>
-  </li>
-  <li class="nav-item" *ngIf="userId" (click)="logoutUser()">
+  </ul>
+  <ul class="nav-item" *ngIf="userId" (click)="logoutUser()">
     <a class="nav-link" href="#">
-      <i class="fas fa-sign-out-alt"></i>
+      <span class="fas fa-sign-out-alt"></span>
       <span>Logout</span>
     </a>
-  </li>
+  </ul>
 </nav>

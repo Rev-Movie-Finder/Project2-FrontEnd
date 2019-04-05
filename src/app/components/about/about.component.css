@@ -13,15 +13,6 @@ p {
   color: #808080;
 }
 
-i {
+span {
   padding: 2rem;
-}
-
-#J {
-  color: #202020;
-  font-size: 12px;
-}
-
-#J:hover {
-  color: #808080;
 }
